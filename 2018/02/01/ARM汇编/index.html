@@ -79,16 +79,58 @@
 
 
 
-<meta name="description" content="XJBX;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VoidR&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Android Native 进程启动流程  ARM传参，R0-R3传递前四个参数 1. Thumb 指令集特点 Thumb 指令集指令长度：16或32，16为为主 Thumb-16 大部分只能访问前8个寄存器 R0-R7（少数可以访问R8-R15） Thumb-32 可以访问所有的ARM core 寄存器 R0-R15  更小、更加灵活  2. ARM指令集特点 指令长度32位，4字节对齐 功能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARM汇编">
+<meta property="og:url" content="http://yoursite.com/2018/02/01/ARM汇编/index.html">
 <meta property="og:site_name" content="VoidR&#39;s blog">
-<meta property="og:description" content="XJBX;">
+<meta property="og:description" content="Android Native 进程启动流程  ARM传参，R0-R3传递前四个参数 1. Thumb 指令集特点 Thumb 指令集指令长度：16或32，16为为主 Thumb-16 大部分只能访问前8个寄存器 R0-R7（少数可以访问R8-R15） Thumb-32 可以访问所有的ARM core 寄存器 R0-R15  更小、更加灵活  2. ARM指令集特点 指令长度32位，4字节对齐 功能">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180115/8ek7b9Jk2K.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180115/mJkdiFL95I.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180115/3F7Kh72CcJ.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180115/HefgcabdgD.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/bDfa164Gm2.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/L44GbeBb0g.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/m6cmAKf7f1.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/42LgAImG8C.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/k6BCjcgdHD.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/JGdKAA9LFK.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/6BhFchfIi3.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/dK8d27jgfb.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/GmCIi75chL.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/fJeKmkHmL6.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/Hl91i5EjJE.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/F9JfJKKKBG.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/6llGaFG7k6.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/e5bagIfbfD.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/aFcH160afA.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/8ecida68KH.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/I6IjBIEGhG.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/debffk3A60.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/eAf963eelJ.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/65Ab19GkKH.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/ijeK017DDJ.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/kljAI65kFj.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/DLeG0i8IIb.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/dmfLIFbgC6.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/2JFelgFi6a.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/I58CbF6A6C.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/jkcGKL7fbH.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/7EilLlHJfE.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/7dha4ei960.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/e64JgLd8gc.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/KKmHecaK8C.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/D69cGmkeCF.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/G319AEKc61.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/k7eHK6CLmf.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/4FgIA8aDcm.png?imageslim">
+<meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180118/8Fg5394hJj.png?imageslim">
+<meta property="og:updated_time" content="2018-02-01T15:51:22.766Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VoidR&#39;s blog">
-<meta name="twitter:description" content="XJBX;">
+<meta name="twitter:title" content="ARM汇编">
+<meta name="twitter:description" content="Android Native 进程启动流程  ARM传参，R0-R3传递前四个参数 1. Thumb 指令集特点 Thumb 指令集指令长度：16或32，16为为主 Thumb-16 大部分只能访问前8个寄存器 R0-R7（少数可以访问R8-R15） Thumb-32 可以访问所有的ARM core 寄存器 R0-R15  更小、更加灵活  2. ARM指令集特点 指令长度32位，4字节对齐 功能">
+<meta name="twitter:image" content="http://onc55v8te.bkt.clouddn.com/blog/180115/8ek7b9Jk2K.png?imageslim">
 
 
 
@@ -118,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/01/ARM汇编/"/>
 
 
 
 
 
-  <title>VoidR's blog</title>
+  <title>ARM汇编 | VoidR's blog</title>
   
 
 
@@ -143,8 +185,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,9 +278,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -269,9 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/01/ARM汇编/" itemprop="url">ARM汇编</a></h1>
+          <h1 class="post-title" itemprop="name headline">ARM汇编</h1>
         
 
         <div class="post-meta">
@@ -343,9 +382,7 @@
       
 
       
-        
-          
-            <h4 id="Android-Native-进程启动流程"><a href="#Android-Native-进程启动流程" class="headerlink" title="Android Native 进程启动流程"></a>Android Native 进程启动流程</h4><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/8ek7b9Jk2K.png?imageslim" alt="mark"></p>
+        <h4 id="Android-Native-进程启动流程"><a href="#Android-Native-进程启动流程" class="headerlink" title="Android Native 进程启动流程"></a>Android Native 进程启动流程</h4><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/8ek7b9Jk2K.png?imageslim" alt="mark"></p>
 <p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/mJkdiFL95I.png?imageslim" alt="mark"></p>
 <p>ARM传参，R0-R3传递前四个参数</p>
 <h4 id="1-Thumb-指令集特点"><a href="#1-Thumb-指令集特点" class="headerlink" title="1. Thumb 指令集特点"></a>1. Thumb 指令集特点</h4><ul>
@@ -520,8 +557,6 @@
 <p>所以必须记住这个前提，在arm中，每次该指令执行时，其实这时的PC值是PC=PC+8</p>
 <p>而且这个前提也同样适合多级流水线，原因就不解释了</p>
 
-          
-        
       
     </div>
     
@@ -538,185 +573,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/01/树莓派/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="VoidR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="VoidR's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/01/树莓派/" itemprop="url">树莓派配置指南</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-01T23:31:43+08:00">
-                2018-02-01
-              </time>
+              <a href="/2018/02/01/树莓派/" rel="next" title="树莓派配置指南">
+                <i class="fa fa-chevron-left"></i> 树莓派配置指南
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/IoT/" itemprop="url" rel="index">
-                    <span itemprop="name">IoT</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h4 id="下载烧录镜像"><a href="#下载烧录镜像" class="headerlink" title="下载烧录镜像"></a>下载烧录镜像</h4><p><a href="http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-04-10/" target="_blank" rel="noopener">镜像下载地址</a></p>
-<p><a href="http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-04-10/" target="_blank" rel="noopener">http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-04-10/</a></p>
-<p>写入sd卡（需要一个读卡器</p>
-<p><a href="https://etcher.io/" target="_blank" rel="noopener">下载etcher</a></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/jhlaJBmHh2.png?imageslim" alt="mark"></p>
-<h4 id="镜像烧好后"><a href="#镜像烧好后" class="headerlink" title="镜像烧好后"></a>镜像烧好后</h4><p><strong>在boot路径下新建一个命名为ssh(无后缀）的空白文件，使得ssh默认开启。</strong></p>
-<p>参考这个用一根网线连接电脑去操作（windows）<br> <a href="http://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html" target="_blank" rel="noopener">http://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html</a></p>
-<p> 或者和我一样用一根网线直接插在路由器后面</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/jI44KDfLbD.png?imageslim" alt="mark"></p>
-<p>也可以不用网线，直接配置无线上网，不赘述。<a href="http://shumeipai.nxez.com/2017/09/13/raspberry-pi-network-configuration-before-boot.html" target="_blank" rel="noopener">http://shumeipai.nxez.com/2017/09/13/raspberry-pi-network-configuration-before-boot.html</a></p>
-<h4 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h4><p>找到ip后用ssh远程连接，默认账号密码为</p>
-<p>user:pi</p>
-<p>password:raspberry</p>
-<h4 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h4><p>修改/etc/apt/sources.list为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi</span><br><span class="line"># Uncomment line below then &apos;apt-get update&apos; to enable &apos;apt-get source&apos;</span><br><span class="line"># deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ jessie main ui</span><br></pre></td></tr></table></figure>
-<p>sudo apt-get update</p>
-<h4 id="安装vim"><a href="#安装vim" class="headerlink" title="安装vim"></a>安装vim</h4><p>sudo apt-get install vim</p>
-<h5 id="释放限制空间（封印解除"><a href="#释放限制空间（封印解除" class="headerlink" title="释放限制空间（封印解除"></a>释放限制空间（封印解除</h5><p>sudo raspi-config</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/7GK1f062B3.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/fmG7j880l6.png?imageslim" alt="mark"></p>
-<h4 id="打开vnc"><a href="#打开vnc" class="headerlink" title="打开vnc"></a>打开vnc</h4><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/g5GE31H6j6.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/2l93FIKKIB.png?imageslim" alt="mark"></p>
-<h6 id="vnc开机自启动设置"><a href="#vnc开机自启动设置" class="headerlink" title="vnc开机自启动设置"></a>vnc开机自启动设置</h6><p>vim  /etc/init.d/vncserver</p>
-<p>然后 复制下面的内容 右键粘贴进去<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">### BEGIN INIT INFO</span><br><span class="line"># Provides:          vncserver</span><br><span class="line"># Required-Start:    $local_fs</span><br><span class="line"># Required-Stop:     $local_fs</span><br><span class="line"># Default-Start:     2 3 4 5</span><br><span class="line"># Default-Stop:      0 1 6</span><br><span class="line"># Short-Description: Start/stop vncserver</span><br><span class="line">### END INIT INFO</span><br><span class="line"> </span><br><span class="line"># More details see:</span><br><span class="line"># http://www.penguintutor.com/linux/vnc</span><br><span class="line"> </span><br><span class="line">### Customize this entry</span><br><span class="line"># Set the USER variable to the name of the user to start vncserver under</span><br><span class="line">export USER=&apos;pi&apos;</span><br><span class="line">### End customization required</span><br><span class="line"> </span><br><span class="line">eval cd ~$USER</span><br><span class="line"> </span><br><span class="line">case &quot;$1&quot; in</span><br><span class="line">  start)</span><br><span class="line">    # 启动命令行。此处自定义分辨率、控制台号码或其它参数。</span><br><span class="line">    su $USER -c &apos;/usr/bin/vncserver -depth 16 -geometry 1024x768 :1&apos;</span><br><span class="line">    echo &quot;Starting VNC server for $USER &quot;</span><br><span class="line">    ;;</span><br><span class="line">  stop)</span><br><span class="line">    # 终止命令行。此处控制台号码与启动一致。</span><br><span class="line">    su $USER -c &apos;/usr/bin/vncserver -kill :1&apos;</span><br><span class="line">    echo &quot;vncserver stopped&quot;</span><br><span class="line">    ;;</span><br><span class="line">  *)</span><br><span class="line">    echo &quot;Usage: /etc/init.d/vncserver &#123;start|stop&#125;&quot;</span><br><span class="line">    exit 1</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure></p>
-<h6 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h6><p>sudo chmod 755 /etc/init.d/vncserver</p>
-<h6 id="添加开机启动项"><a href="#添加开机启动项" class="headerlink" title="添加开机启动项"></a>添加开机启动项</h6><p>sudo update-rc.d vncserver defaults</p>
-<h6 id="最后-重启树莓派"><a href="#最后-重启树莓派" class="headerlink" title="最后 重启树莓派"></a>最后 重启树莓派</h6><p>sudo reboot</p>
-<h6 id="安装VNC-Viewer"><a href="#安装VNC-Viewer" class="headerlink" title="安装VNC Viewer"></a>安装VNC Viewer</h6><p>链接：<a href="https://pan.baidu.com/s/1jJAy7bg" target="_blank" rel="noopener">https://pan.baidu.com/s/1jJAy7bg</a> 密码：gnyy</p>
-<p>输入ip:1</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/9dC1C8d8Eg.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/eBh80HfKlB.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/0bbcHg69fD.png?imageslim" alt="mark"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -726,138 +604,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="VoidR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="VoidR's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/31/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T01:45:38+08:00">
-                2018-01-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -865,6 +616,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -885,8 +640,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -937,6 +701,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-Native-进程启动流程"><span class="nav-number">1.</span> <span class="nav-text">Android Native 进程启动流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Thumb-指令集特点"><span class="nav-number">2.</span> <span class="nav-text">1. Thumb 指令集特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ARM指令集特点"><span class="nav-number">3.</span> <span class="nav-text">2. ARM指令集特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对比"><span class="nav-number">4.</span> <span class="nav-text">对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Opcod-中判断指令集"><span class="nav-number">5.</span> <span class="nav-text">3. Opcod 中判断指令集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-IDA-中识别与切换指令集"><span class="nav-number">6.</span> <span class="nav-text">4. IDA 中识别与切换指令集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-ARM切换指令集原理"><span class="nav-number">7.</span> <span class="nav-text">5. ARM切换指令集原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARM-中对于字节、字、双字的定义"><span class="nav-number">8.</span> <span class="nav-text">ARM 中对于字节、字、双字的定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDA中的自定义数据类型"><span class="nav-number"></span> <span class="nav-text">IDA中的自定义数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为自定义数据类型添加字段"><span class="nav-number">1.</span> <span class="nav-text">为自定义数据类型添加字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用自定义数据类型"><span class="nav-number">2.</span> <span class="nav-text">应用自定义数据类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM汇编中的标志寄存器与条件代码"><span class="nav-number"></span> <span class="nav-text">ARM汇编中的标志寄存器与条件代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#跳转指令"><span class="nav-number">1.</span> <span class="nav-text">跳转指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件执行"><span class="nav-number">2.</span> <span class="nav-text">条件执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较指令的大用处"><span class="nav-number">3.</span> <span class="nav-text">比较指令的大用处</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标志寄存器"><span class="nav-number">4.</span> <span class="nav-text">标志寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#APSR-寄存器"><span class="nav-number">4.1.</span> <span class="nav-text">APSR 寄存器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一些会修改标志位的指令"><span class="nav-number">4.2.</span> <span class="nav-text">一些会修改标志位的指令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例分析"><span class="nav-number">5.</span> <span class="nav-text">实例分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成thumb代码"><span class="nav-number"></span> <span class="nav-text">生成thumb代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成ARM代码"><span class="nav-number"></span> <span class="nav-text">生成ARM代码</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#CEMU测试"><span class="nav-number">0.0.1.</span> <span class="nav-text">CEMU测试</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#bl-funl-把LR设置为BL指令的下一条地址"><span class="nav-number">0.0.2.</span> <span class="nav-text">bl funl //把LR设置为BL指令的下一条地址</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#fun1"><span class="nav-number">0.0.3.</span> <span class="nav-text">fun1:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#mov-r0-pc"><span class="nav-number">0.0.4.</span> <span class="nav-text">mov r0,pc</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#mov-r1-lr"><span class="nav-number">0.0.5.</span> <span class="nav-text">mov r1,lr</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于ARM中的寄存器PC"><span class="nav-number"></span> <span class="nav-text">关于ARM中的寄存器PC</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1084,6 +864,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
