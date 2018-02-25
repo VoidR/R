@@ -366,30 +366,37 @@
       
         
           
-            <h2 id="CPU运行原理"><a href="#CPU运行原理" class="headerlink" title="CPU运行原理"></a>CPU运行原理</h2><h4 id="计算机组成部分"><a href="#计算机组成部分" class="headerlink" title="计算机组成部分"></a>计算机组成部分</h4><ol>
-<li>控制器 对程序规定的控制信息进行解释</li>
-<li>运算器 对数据进行加工处理</li>
-<li>存储器 存储程序、数据和各种信号、命令等信息，并在需要时提供这些信息。</li>
-<li>输入</li>
-<li>输出</li>
-</ol>
-<h4 id="CPU的内部架构"><a href="#CPU的内部架构" class="headerlink" title="CPU的内部架构"></a>CPU的内部架构</h4><p><img src="https://i.loli.net/2017/10/16/59e48a1a81773.png" alt="TIM截图20171016182916.png"></p>
-<h4 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h4><ol>
-<li>数据总线</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e48a9b59691.png" alt="数据总线.png"></p>
-<ol>
-<li>地址总线</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e48a9b604a2.png" alt="地址总线.png"></p>
-<ol>
-<li>控制总线</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e48a9b738ca.png" alt="控制总线.png"></p>
-<h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><p><img src="https://i.loli.net/2017/10/16/59e4d478d64fd.png" alt="通用寄存器.png"></p>
-<p><img src="https://i.loli.net/2017/10/16/59e4d478f197c.png" alt="TIM截图20171016234646.png"></p>
+          CPU运行原理计算机组成部分
+控制器 对程序规定的控制信息进行解释
+运算器 对数据进行加工处理
+存储器 存储程序、数据和各种信号、命令等信息，并在需要时提供这些信息。
+输入
+输出
+
+CPU的内部架构
+总线
+数据总线
+
+
+
+地址总线
+
+
+
+控制总线
+
+
+通用寄存器
+
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/02/CPU运行原理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -548,29 +555,21 @@
       
         
           
-            <h3 id="复杂数据类型的机器级表示"><a href="#复杂数据类型的机器级表示" class="headerlink" title="复杂数据类型的机器级表示"></a>复杂数据类型的机器级表示</h3><h4 id="数组的分配与访问"><a href="#数组的分配与访问" class="headerlink" title="数组的分配与访问"></a>数组的分配与访问</h4><ul>
-<li>分配在静态区的数组，在链接后，在可执行目标文件的数据段中分配了空间。</li>
-<li>在函数内部的数组，是auto型数组，数组数据分配在栈中，故数组首址通过EBP来定位。</li>
-</ul>
-<h4 id="结构体数据的分配和访问"><a href="#结构体数据的分配和访问" class="headerlink" title="结构体数据的分配和访问"></a>结构体数据的分配和访问</h4><ul>
-<li>分配在栈中的auto结构型变量的首地址由EBP或ESP来定位</li>
-<li>分配在静态区的结构型变量首地址是一个可以确定的静态区地址</li>
-<li><p>结构型变量x各成员首址可用“基址加偏移量”的寻址方式</p>
-</li>
-<li><p>结构体数据作为入口参数，通常应按地址传递</p>
-</li>
-</ul>
-<h4 id="联合体数据的分配和访问"><a href="#联合体数据的分配和访问" class="headerlink" title="联合体数据的分配和访问"></a>联合体数据的分配和访问</h4><ul>
-<li>联合体各成员共享存储空间，按最大长度成员所需空间大小为准。</li>
-<li>当事先知道某种数据结构中的不同字段的使用时间是互斥的，就可以将这些字段声明为联合，以减少空间</li>
-</ul>
-<h4 id="数据的对齐"><a href="#数据的对齐" class="headerlink" title="数据的对齐"></a>数据的对齐</h4><blockquote>
-<p>减少访存次数</p>
-</blockquote>
-<p><img src="https://i.loli.net/2017/11/02/59fb33d2bab33.bmp" alt="对齐方式.bmp"></p>
-<h4 id="越界访问和缓冲区溢出"><a href="#越界访问和缓冲区溢出" class="headerlink" title="越界访问和缓冲区溢出"></a>越界访问和缓冲区溢出</h4><p><img src="https://i.loli.net/2017/11/02/59fb393201655.bmp" alt="TIM截图20171102232546.bmp"></p>
+          复杂数据类型的机器级表示数组的分配与访问
+分配在静态区的数组，在链接后，在可执行目标文件的数据段中分配了空间。
+在函数内部的数组，是auto型数组，数组数据分配在栈中，故数组首址通过EBP来定位。
 
-          
+结构体数据的分配和访问
+分配在栈中的auto结构型变量的首地址由EBP或ESP来定位
+分配在静态区的
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/02/计算机系统基础 (4)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -729,219 +728,20 @@
       
         
           
-            <h2 id="IA-32指令类型"><a href="#IA-32指令类型" class="headerlink" title="IA-32指令类型"></a>IA-32指令类型</h2><h4 id="IA-32的标志寄存器"><a href="#IA-32的标志寄存器" class="headerlink" title="IA-32的标志寄存器"></a>IA-32的标志寄存器</h4><ul>
-<li>6个条件标志</li>
-</ul>
-<blockquote>
-<p><strong>OF （Overflow Flag） 溢出标志位</strong><br>溢出标志OF用于反映有符号数加减运算所得结果是否溢出。如果运算结果超过当前运算位数所能表示的范围，则称为溢出，OF的值被置为1，否则，OF的值被清为0。</p>
-<p><strong>SF （Sign Flag） 符号标志</strong><br>符号标志SF用来反映运算结果的符号位，它与运算结果的最高位相同。在微机系统中，有符号数采用补码表示法，所以，SF也就反映运算结果的正负号。运算结果为正数时，SF的值为0，否则其值为1。</p>
-<p><strong>ZF （Zero Flag） 零标志</strong><br>零标志ZF用来反映运算结果是否为0。如果运算结果为0，则其值为1，否则其值为0。在判断运算结果是否为0时，可使用此标志位。</p>
-<p><strong>CF （Carry Flag） 进位标志</strong><br>进位标志CF主要用来反映运算是否产生进位或借位。如果运算结果的最高位产生了一个进位或借位，那么，其值为1，否则其值为0。</p>
-<p>使用该标志位的情况有：多字(字节)数的加减运算，无符号数的大小比较运算，移位操作，字(字节)之间移位，专门改变CF值的指令等。</p>
-<p><strong>AF (Auxiliary Carry Flag) 辅助进位标志</strong><br>在发生下列情况时，辅助进位标志AF的值被置为1，否则其值为0：</p>
-<ol>
-<li>在字操作时，发生低字节向高字节进位或借位时；</li>
-<li>在字节操作时，发生低4位向高4位进位或借位时。</li>
-</ol>
-<p><strong>PF(Parity Flag) 奇偶标志</strong><br>奇偶标志PF用于反映运算结果中“1”的个数的奇偶性。如果“1”的个数为偶数，则PF的值为1，否则其值为0。</p>
-</blockquote>
-<ul>
-<li>3个控制标志</li>
-</ul>
-<blockquote>
-<p><strong>DF （Direction Flag） 方向标志</strong>(自动变址方向是增还是减)<br>方向标志DF用来决定在串操作指令执行时有关指针寄存器发生调整的方向。</p>
-<p><strong>IF (Interruput  Flag) 中断允许标志</strong>(仅对外部可屏蔽中断有用)<br>中断允许标志IF是用来决定CPU是否响应CPU外部的可屏蔽中断发出的中断请求。但不管该标志为何值，CPU都必须响应CPU外部的不可屏蔽中断所发出的中断请求，以及CPU内部产生的中断请求。</p>
-<ol>
-<li>当IF=1时，CPU可以响应CPU外部的可屏蔽中断发出的中断请求；</li>
-<li>当IF=0时，CPU不响应CPU外部的可屏蔽中断发出的中断请求。</li>
-</ol>
-<p><strong>TF (Trap Flag) 陷阱标志</strong>(是否是单步跟踪状态)<br>当追踪标志TF被置为1时，CPU进入单步执行方式，即每执行一条指令，产生一个单步中断请求。这种方式主要用于程序的调试。</p>
-</blockquote>
-<p><img src="https://i.loli.net/2017/10/21/59eb51b84b45f.png" alt="IA-32b标志.png"></p>
-<h4 id="IA-32-指令系统概述"><a href="#IA-32-指令系统概述" class="headerlink" title="IA-32 指令系统概述"></a>IA-32 指令系统概述</h4><ul>
-<li>IA-32是典型的CISC（复杂指令集计算机）风格ISA</li>
-</ul>
-<blockquote>
-<p>8个通用寄存器</p>
-<p>2个专用寄存器：</p>
-<ol>
-<li>EIP（PC） EIP寄存器主要用于存放当前代码段即将被执行的下一条指令的偏移，但其本质上并不能直接被指令直接访问。</li>
-<li>标志寄存器EFLAGS</li>
-</ol>
-<p>6个段寄存器（间接给出段基址）</p>
-<p>存储器地址空间为4GB，按字节编址，小端方式</p>
-<p>寻址方式 </p>
-<ol>
-<li>立即</li>
-<li>寄存器</li>
-<li><p>存储器         段基址+有效地址（位移量）</p>
-<p><img src="https://i.loli.net/2017/10/21/59eb591312400.png" alt="寻址方式.png"><br>[B]——基址寄存器编号 [I]——变址寄存器编号 s——比例因子  A——位移量 这些信息可以排列组合</p>
-<ol>
-<li>相对寻址（指令）</li>
-</ol>
-</li>
-</ol>
-<p>变长指令字，变长操作码</p>
-<ul>
-<li>汇编语言格式</li>
-</ul>
-<ol>
-<li>Inter格式汇编</li>
-<li>AT&amp;T格式汇编</li>
-</ol>
-<p><a href="http://www.cnblogs.com/hdk1993/p/4820353.html" target="_blank" rel="noopener">Intel格式和AT&amp;T格式汇编区别</a></p>
-</blockquote>
-<h2 id="IA-32指令类型-1"><a href="#IA-32指令类型-1" class="headerlink" title="IA-32指令类型"></a>IA-32指令类型</h2><h4 id="传送指令"><a href="#传送指令" class="headerlink" title="传送指令"></a>传送指令</h4><ul>
-<li>通用数据传送指令</li>
-</ul>
-<blockquote>
-<p><strong>MOV</strong>：一般传送 </p>
-<p>==注意：  MOV指令不能在两个存储器之间进行数据直接传送。 MOV指令不能在两个段寄存器之间进行数据直接传送。==</p>
-<p><strong>MOVS</strong>：符号扩展传送</p>
-<p><strong>MOVZ</strong>: 零扩展传送</p>
-<p><strong>XCHG</strong>: 数据交换</p>
-<p><strong>PUSH/POP</strong>: 入栈/出栈</p>
-</blockquote>
-<ul>
-<li>地址传送指令</li>
-</ul>
-<blockquote>
-<p><strong>LEA</strong> 加载有效地址</p>
-</blockquote>
-<ul>
-<li>输入输出指令</li>
-</ul>
-<blockquote>
-<p><strong>IN和OUT</strong>: I/O端口与寄存器之间的交换</p>
-</blockquote>
-<ul>
-<li>标志传送指令</li>
-</ul>
-<blockquote>
-<p><strong>PUSHF、POPF</strong>: 将EFLAG压栈，将栈顶内容送入EFLAG</p>
-</blockquote>
-<h4 id="定点算术运算指令"><a href="#定点算术运算指令" class="headerlink" title="定点算术运算指令"></a>定点算术运算指令</h4><ul>
-<li>加减（影响标志，不区分无/带符号）</li>
-</ul>
-<blockquote>
-<p><strong>ADD SUB</strong></p>
-</blockquote>
-<ul>
-<li>增1/减1运算（影响除CF以外的标志，不区分无/带符号）</li>
-</ul>
-<blockquote>
-<p><strong>INC DEC</strong></p>
-</blockquote>
-<ul>
-<li>取负运算（影响标志，若对0取负，则结果为0且CF清0，否则CF置1）</li>
-</ul>
-<blockquote>
-<p><strong>NEG</strong></p>
-</blockquote>
-<ul>
-<li>比较运算（做减法得到标志，不区分无/带符号）</li>
-</ul>
-<blockquote>
-<p><strong>CMP</strong></p>
-</blockquote>
-<ul>
-<li>乘/除运算（不影响标志，区分无/带符号）</li>
-</ul>
-<blockquote>
-<p><strong>MUL/IMUL</strong> 无符号乘/带符号乘</p>
-<p><strong>DIV/IDIV</strong> 无符号除/带符号除</p>
-</blockquote>
-<p><img src="https://i.loli.net/2017/10/22/59eb7f2e9412e.png" alt="定点运算指令汇总.png"></p>
-<h4 id="按位运算"><a href="#按位运算" class="headerlink" title="按位运算"></a>按位运算</h4><ul>
-<li>逻辑运算</li>
-</ul>
-<blockquote>
-<p><strong>NOT 非</strong></p>
-<p><strong>AND 与</strong></p>
-<p><strong>OR 或</strong></p>
-<p><strong>XOR 异或</strong></p>
-<p><strong>TEST 做“与”测试，仅影响标志</strong></p>
-</blockquote>
-<ul>
-<li>移位运算 （左/右移时，最高/最低位送CF）</li>
-</ul>
-<blockquote>
-<p><strong>SHL/SHR：逻辑左/右移</strong></p>
-<p><strong>SAL/SAR: 算术左/右移</strong>          左移判溢出，右移高位补符</p>
-<p><strong>ROL/ROR 循环左/右移</strong></p>
-<p><strong>RCL/RCR 带进位循环左/右移</strong></p>
-</blockquote>
-<p><img src="https://ooo.0o0.ooo/2017/10/22/59ec34006c4bb.png" alt="逆向工程.png"></p>
-<h4 id="控制转移指令"><a href="#控制转移指令" class="headerlink" title="控制转移指令"></a>控制转移指令</h4><ul>
-<li>无条件转移指令</li>
-</ul>
-<blockquote>
-<p><strong>JMP DST</strong>   无条件转移到目标指令DST处执行</p>
-</blockquote>
-<ul>
-<li>条件转移</li>
-</ul>
-<blockquote>
-<p><strong>Jcc DST</strong> cc为条件码，根据标志（条件码）判断是否满足条件，若满足，则转移道目标指DST处执行，否则顺序执行</p>
-</blockquote>
-<ul>
-<li>条件设置</li>
-</ul>
-<blockquote>
-<p><strong>SETcc DST</strong> 按条件码cc判断的结果保存到DST（是一个8为寄存器）</p>
-</blockquote>
-<ul>
-<li>调用和返回指令（用于过程调用）</li>
-</ul>
-<ul>
-<li>中断指令</li>
-</ul>
-<blockquote>
-<p><strong>CALL DST</strong> 返回地址RA入栈，转DST处执行</p>
-<p><strong>RET</strong> 从栈中取出返回地址RA，转到RA处执行</p>
-</blockquote>
-<p><img src="https://ooo.0o0.ooo/2017/10/22/59ec395e65694.png" alt="控制.png"></p>
-<h4 id="x87浮点处理指令"><a href="#x87浮点处理指令" class="headerlink" title="x87浮点处理指令"></a>x87浮点处理指令</h4><p><img src="https://ooo.0o0.ooo/2017/10/22/59ec3d43c4610.png" alt="IA-32 的浮点处理架构.png"></p>
-<h2 id="C语言语句的机器级表示"><a href="#C语言语句的机器级表示" class="headerlink" title="C语言语句的机器级表示"></a>C语言语句的机器级表示</h2><p><img src="https://ooo.0o0.ooo/2017/10/22/59ec43ff52411.png" alt="过程调用的机器级表示.png"></p>
-<h4 id="过程（函数）的结构"><a href="#过程（函数）的结构" class="headerlink" title="过程（函数）的结构"></a>过程（函数）的结构</h4><h6 id="一个C过程的大致结构如下"><a href="#一个C过程的大致结构如下" class="headerlink" title="一个C过程的大致结构如下"></a>一个C过程的大致结构如下</h6><hr>
-<ol>
-<li>准备阶段 </li>
-</ol>
-<ul>
-<li><p>形成帧底：push指令和mov指令</p>
-</li>
-<li><p>生成栈帧（如果需要的话）：sub指令或and指令</p>
-</li>
-<li><p>保存现场（如果有被调用者保存寄存器）： mov指令</p>
-</li>
-</ul>
-<ol>
-<li>过程（函数）体</li>
-</ol>
-<ul>
-<li><p>分配局部变量空间，并赋值</p>
-</li>
-<li><p>具体处理逻辑，如果遇到函数调用时</p>
-<ul>
-<li>准备参数： 将实参送栈帧入口参数处</li>
-<li>CLLL指令： 保存返回地址并转被调用函数</li>
-</ul>
-</li>
-<li><p>在EAX中准备返回参数</p>
-</li>
-</ul>
-<ol>
-<li>结束阶段</li>
-</ol>
-<ul>
-<li>退栈： leave指令或pop指令</li>
-</ul>
-<hr>
-<h4 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h4><p><img src="https://ooo.0o0.ooo/2017/10/22/59ec6985075e3.png" alt="选择结构的机器级表示.png"></p>
-<h4 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h4><p><img src="https://ooo.0o0.ooo/2017/10/22/59ec69b0df63a.png" alt="循环结构的机器级语言表示.png"></p>
-<p>==为提高程序性能，能用非递归方式执行最好用非递归方式。==</p>
+          IA-32指令类型IA-32的标志寄存器
+6个条件标志
 
-          
+
+OF （Overflow Flag） 溢出标志位溢出标志OF用于反映有符号数加减运算所得结果是否溢出。如果运算结果超过当前运算位数所能表示的范围，则称为溢出，OF的值被置为1，否则，OF的值被清为0。
+SF （Sign Flag） 符号标志
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/02/计算机系统基础 (3)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1100,71 +900,18 @@
       
         
           
-            <h2 id="计算机系统基础（二）"><a href="#计算机系统基础（二）" class="headerlink" title="计算机系统基础（二）"></a>计算机系统基础（二）</h2><h3 id="数据的表示和存储"><a href="#数据的表示和存储" class="headerlink" title="数据的表示和存储"></a>数据的表示和存储</h3><ol>
-<li>八进制后缀O 十六进制后缀H 或者前缀Ox</li>
-<li>十进制到二进制转换 通过记住1、24、8、16、32、64、128、256、512、1024、<br> 2048、4096、8192、16382、32768、65536</li>
-<li>在计算机内部，一个浮点数可以用数的符号、一个定点小数和一个定点整数来表示。<br><img src="https://i.loli.net/2017/10/15/59e36338af080.png" alt="TIM截图20171015213123.png"></li>
-<li>原码（Sign and Magnitude）浮点数尾数用原码定点小数表示<br><img src="https://i.loli.net/2017/10/15/59e36fffbf167.png" alt="TIM截图20171015222558.png"></li>
-<li>移码表示 将每一个数值加上一个偏置常数。便于浮点数加减运算时的对阶操作（比较大小）。通常，当编码位数为n时，bias取2<sup>n-1</sup>或2<sup>n-1</sup>-1。当bias取2<sup>n-1</sup>时，移码和补码仅第一位不同，移码用来表示浮点数的阶。</li>
-<li>补码 （模运算）来表示带符号整数。在一个模运算系统中，一个数与它除以模后的余数等价。一个负数的补码等于将对应正数补码各位取反，末位加一。  一个负数的补码等于模减该负数的绝对值。负数的补码等于对应正数补码各位取反，末位加一。</li>
-<li>最低有效位 LSB 最高有效位 MSB</li>
-<li>存储器的编址方式：大端方式和小端方式<h3 id="运算电路"><a href="#运算电路" class="headerlink" title="运算电路"></a>运算电路</h3><h5 id="C语言中的运算"><a href="#C语言中的运算" class="headerlink" title="C语言中的运算"></a>C语言中的运算</h5></li>
-<li>算术运算</li>
-<li>按位运算 对位串实现掩码操作或相应的其他处理（主要用于对多媒体数据或状态/控制信息进行处理）。</li>
-<li>移位运算 提取部分信息，扩大或缩小2、4、8…倍。</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e43d5585541.png" alt="TIM截图20171016130207.png"></p>
-<ol>
-<li>逻辑运算 用于关系表达式的运算</li>
-<li>位扩展和位截断 类型转换</li>
-</ol>
-<h5 id="整数加减运算"><a href="#整数加减运算" class="headerlink" title="整数加减运算"></a>整数加减运算</h5><p><img src="https://i.loli.net/2017/10/16/59e43eb41b160.png" alt="TIM截图20171016130750.png"></p>
-<ul>
-<li>计算机中所有运算都基于加法器实现</li>
-<li>加法器不知道所运算的的是带符号数还是无符号数</li>
-<li><p>加法器不判定对错，总是取低n位作为结果，并生成标志信息。<br><img src="https://i.loli.net/2017/10/16/59e43f69b1411.png" alt="TIM截图20171016131101.png"><br>溢出公式</p>
-</li>
-<li><p>无符号减公式</p>
-</li>
-<li><img src="https://i.loli.net/2017/10/16/59e4419fc4d8f.png" alt="无符号减公式.png"></li>
-<li>带符号减公式</li>
-<li><img src="https://i.loli.net/2017/10/16/59e4419fd7f2f.png" alt="带符号减公式.png"></li>
-<li>无符号加公式</li>
-<li><img src="https://i.loli.net/2017/10/16/59e4419fd37d9.png" alt="无符号加公式.png"></li>
-<li>带符号加公式</li>
-<li><img src="https://i.loli.net/2017/10/16/59e4419fe2077.png" alt="带符号加公式.png"></li>
-</ul>
-<h3 id="乘除运算及浮点数运算"><a href="#乘除运算及浮点数运算" class="headerlink" title="乘除运算及浮点数运算"></a>乘除运算及浮点数运算</h3><ol>
-<li>整数的乘法运算</li>
-</ol>
-<p>整数乘法溢出漏洞</p>
-<p><img src="https://i.loli.net/2017/10/16/59e4437b4b50f.png" alt="TIM截图20171016132823.png"></p>
-<p>编译器在处理变量和常数相乘时，往往以移位、加位和减法的组合运算来代替乘法运算。</p>
-<ol>
-<li>整数除法运算</li>
-</ol>
-<p>编译器在处理一个变量与一个2的幂次形式的整数相除时，常采用右移运算来实现。</p>
-<p>变量与常数之间的除运算</p>
-<p><img src="https://i.loli.net/2017/10/16/59e444f2ba9ed.png" alt="TIM截图20171016133422.png"></p>
-<ol>
-<li>浮点数运算</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e4457a5fbe9.png" alt="TIM截图20171016133630.png"></p>
-<p>上述过程可能出现的情况</p>
-<p><img src="https://i.loli.net/2017/10/16/59e44584cd418.png" alt="TIM截图20171016133652.png"></p>
-<p>IEEE 754 标准规定的五种异常</p>
-<ol>
-<li>无效运算（无意义）</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e4461ba63cd.png" alt="1.png"></p>
-<ol>
-<li>除以0（即无穷大）</li>
-<li>数太大（阶上溢）</li>
-<li>数太小（阶下溢）</li>
-<li>结果不精确（舍入）</li>
-</ol>
-
-          
+          计算机系统基础（二）数据的表示和存储
+八进制后缀O 十六进制后缀H 或者前缀Ox
+十进制到二进制转换 通过记住1、24、8、16、32、64、128、256、512、1024、 2048、4096、8192、16382、32768、65536
+在计算机内部，一个浮点数可以用数的符号、一个定点小数和一
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/02/计算机系统基础 (2)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1323,39 +1070,24 @@
       
         
           
-            <h2 id="计算机系统基础（一）"><a href="#计算机系统基础（一）" class="headerlink" title="计算机系统基础（一）"></a>计算机系统基础（一）</h2><h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><pre><code>图形用户界面 GUI
+          计算机系统基础（一）序言图形用户界面 GUI
 命令行界面 CLI
-</code></pre><h3 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h3><h5 id="终端仿真器"><a href="#终端仿真器" class="headerlink" title="终端仿真器"></a>终端仿真器</h5><pre><code>Ctrl-c 和Ctrl-v 不起作用。
-</code></pre><h5 id="一些简单命令"><a href="#一些简单命令" class="headerlink" title="一些简单命令"></a>一些简单命令</h5><pre><code>date 显示当前时间和日期
+Linux命令终端仿真器Ctrl-c 和Ctrl-v 不起作用。
+一些简单命令date 显示当前时间和日期
 cal 显示当前月份的日历
 df 查看磁盘剩余空间的数量
 free 显示空闲内存的数量
 exit 终止终端会话
-</code></pre><p><img src="https://i.loli.net/2017/10/14/59e20ee6a1b88.png" alt="TIM截图20171014211103.png"><br><img src="https://i.loli.net/2017/10/14/59e211ea40138.png" alt="TIM截图20171014213215.png"></p>
-<h5 id="幕后控制台"><a href="#幕后控制台" class="headerlink" title="幕后控制台"></a>幕后控制台</h5><pre><code>即使终端仿真器没有运行，在后台仍然有几个终端会话运行着。他们叫做虚拟终端或者是虚拟控制台。
-可以通过 Ctrl-Alt-F1 到 Ctrl-Alt-F6 访问。回到图形桌面，按下Alt-F7.
-</code></pre><h3 id="文件系统中跳转"><a href="#文件系统中跳转" class="headerlink" title="文件系统中跳转"></a>文件系统中跳转</h3><h5 id="文件系统树"><a href="#文件系统树" class="headerlink" title="文件系统树"></a>文件系统树</h5><pre><code>Linux 以分层目录结构来组织所有文件。这就意味着所有文件组成了一颗树型目录。文件系统中的第一级目录称为根目录。
-根目录包含文件和子目录，子目录包含更多的文件和子目录，以此类推。
-Linux总是只有一个单一的文件系统树。
-</code></pre><h5 id="pwd—打印出当前工作目录名"><a href="#pwd—打印出当前工作目录名" class="headerlink" title="pwd—打印出当前工作目录名"></a>pwd—打印出当前工作目录名</h5><pre><code>当用户以普通用户的身份操控系统时，家目录是唯一允许用户对文件进行写入的地方。每个用户都有他自己的家目录。
-</code></pre><h5 id="ls—列出目录内容"><a href="#ls—列出目录内容" class="headerlink" title="ls—列出目录内容"></a>ls—列出目录内容</h5><pre><code>用ls命令可以列出人一个目录的内容，而不只是当前工作目录的内容。
-</code></pre><h5 id="cd—更改目录"><a href="#cd—更改目录" class="headerlink" title="cd—更改目录"></a>cd—更改目录</h5><pre><code>输入cd，然后输入你想要去的工作目录的路径名。路径名可以通过两种方式来指定，一种是绝对路径，另一种是相对路径。
-1. 绝对路径
-绝对路径开始于根目录，紧跟着目录树的一个个分支，一直到达所期望的目录或文件。
-/usr/bin 它意味着从根目录（开头的“/”表示）开始，有一个叫“usr”的目录包含了目录“bin”。
-2. 相对路径
-相对路径开始于工作目录。我们在文件系统树中用一对特殊符号来表示相对位置。“.”（点）指的是工作目录，“..”（点点）指的是工作目录的父目录。
-（ “./”几乎在所有情况下可以省略，它是隐含的输入）
-</code></pre><h5 id="有用的快捷键"><a href="#有用的快捷键" class="headerlink" title="有用的快捷键"></a>有用的快捷键</h5><pre><code>&gt; cd    更改工作目录到你的家目录
-&gt; cd-   更改工作目录到先前的工作目录
-&gt; cd~user_name 更改工作目录到用户家目录。
 
-1. ls-a （--all do not ignore entries starting with . ) 可以列出隐藏文件，以“.&quot;字符开头的文件名是隐藏文件，表示，ls命令不能列出它们。
-2. 文件夹和命令名是大小写敏感的。
-3. Linux没有“文件扩展名”的概念。
-4. Linux支持长文件名，文件名可能包含空格，标点符号，但标点符号仅限使用“.”，“——”，下划线。不要在文件名中使用空格，用下划线来代替。
-</code></pre>
-          
+幕后控制台即
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/02/计算机系统基础 (1)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1514,130 +1246,27 @@ Linux总是只有一个单一的文件系统树。
       
         
           
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Hexo + GitPage 搭建个人博客</p>
-<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><ul>
-<li>系统环境配置</li>
-<li>GitHub创建个人仓库</li>
-<li>推送网站</li>
-<li>绑定域名</li>
-<li>更换主题</li>
-<li>学习MarkDown</li>
-<li>发布文章</li>
-<li>etc</li>
-</ul>
-<h4 id="系统环境配置"><a href="#系统环境配置" class="headerlink" title="系统环境配置"></a>系统环境配置</h4><p>要使用Hexo，需要在你的系统中支持Git和Node.js，如果还没有，那就先安装吧。</p>
-<h5 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h5><p>下载地址：<a href="https://git-scm.com/download/" target="_blank" rel="noopener">https://git-scm.com/download/</a></p>
-<h5 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h5><p><a href="https://nodejs.org/download/" target="_blank" rel="noopener">Node.js下载地址</a></p>
-<p><a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">Node.js 安装配置教程</a></p>
-<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>可以选择一个自己喜欢的路径创建hexo，我的是安装装D:/hexo 下的。<br>cmd窗口切换到对应的目录。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ cd d:/hexo</span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ cd blog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
-<p>在D:/Hexo 下执行 hexo g<br>再执行： hexo s<br>然后在浏览器中打开 localhost:4000，就可以看到在本地已经安装好了。</p>
-<h5 id="常用的Hexo-命令"><a href="#常用的Hexo-命令" class="headerlink" title="常用的Hexo 命令"></a>常用的Hexo 命令</h5><p>之后遇见陌生的指令可以在官方文档中查一查</p>
-<p><a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="noopener">Hexo指令</a><br>（科学上网）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g #安装Hexo</span><br><span class="line">npm update hexo -g #升级 </span><br><span class="line">hexo init #初始化博客</span><br></pre></td></tr></table></figure></p>
-<p>命令简写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br></pre></td></tr></table></figure></p>
-<h4 id="GitHub创建个人仓库"><a href="#GitHub创建个人仓库" class="headerlink" title="GitHub创建个人仓库"></a>GitHub创建个人仓库</h4><p>登陆到GitHub，如果没有账号，用邮箱注册就好：<a href="https://github.com/join?source=login" target="_blank" rel="noopener">Join GitHub</a> 点击GitHub中的New repository创建新仓库，仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法。</p>
-<h5 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h5><h6 id="设置user-name和user-email"><a href="#设置user-name和user-email" class="headerlink" title="设置user.name和user.email"></a>设置user.name和user.email</h6><p>鼠标右键打开Git Bash</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/352Ic27EBd.png?imageslim" alt="mark"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure></p>
-<h6 id="生成ssh密钥文件"><a href="#生成ssh密钥文件" class="headerlink" title="生成ssh密钥文件"></a>生成ssh密钥文件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
-<p>然后直接三个回车，不需要设置密码</p>
-<p>然后找到生成的.ssh文件夹中的id_rsa.pub密钥，将生成的密钥全部复制</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/CbIG95Gm79.png?imageslim" alt="mark"></p>
-<p>打开 <a href="https://github.com/settings/keys" target="_blank" rel="noopener">GitHub_SSH_and_GPG_keys</a> 页面, 新建 SSH key。</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/FKFjigfGFl.png?imageslim" alt="mark"></p>
-<p>将本地生成的密钥粘贴到Key框中，Titel随便填。</p>
-<p>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh git@github.com ：</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/EkAkf40JHE.png?imageslim" alt="mark"></p>
-<p>如上则成功。设置Git Hub私钥的原因是，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
-<h4 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h4><p>目前仅仅只能在本地浏览，现在要做的就是推送网站，让我们的网站可以被更多人访问。</p>
-<p>通过修改<strong>根目录的站点配置文件_config.yml</strong></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/hImHgf7a0j.png?imageslim" alt="mark"></p>
-<p>打开_config.yml，拉到最下面修改为</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/la7DKJbEDL.png?imageslim" alt="mark"></p>
-<p>其中repo 一项 填入之前创建的仓库路径，在下图处复制即可，注意冒号后面有空格。</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/3fJFl727hH.png?imageslim" alt="mark"></p>
-<p>保存站点配置文件</p>
-<p>这一步是为hexo d 这个命令做相应的配置，告诉hexo你要把blog部署在哪，在这里我们部署在我们的GitHub仓库里。</p>
-<p>最后安装Git部署插件，输入命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p>我们再分别输入三条命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<p>hexo clean</p>
-<pre><code>清除缓存文件 (db.json) 和已生成的静态文件 (public)。
-在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。
-</code></pre><p>hexo g </p>
-<pre><code>就是部署网站命令，d是deploy的缩写。
-</code></pre><p>完成后，在浏览器中输入你的仓库路径,xxxxx.github.io（xxxxx就是你的GitHub用户名）</p>
-<p>这样你的博客就上线啦！</p>
-<h4 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h4><p>首先需要获取一个域名</p>
-<p>我还没选好。。</p>
-<p>推荐阿里云<br><a href="https://wanwang.aliyun.com/domain/" target="_blank" rel="noopener">阿里云域名注册</a></p>
-<h4 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h4><p>Hexo默认的主题有点丑，我们可以更换不同的主题，可以在这个链接中选择<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo/Themes</a>。</p>
-<p>我使用的是Next主题，用这个的人挺多的。在blog目录中打开命令行输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
-<p>将Next主题下载到blog目录的themes里的next文件夹中。打开<strong>站点配置文件_config.yml</strong>，修改 </p>
-<pre><code>theme: next
-</code></pre><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/7JfK4j6Hia.png?imageslim" alt="mark"></p>
-<p>再次部署网站<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<p>打开博客可以看看效果，选择的其他主题，参考上述过程也能实现，更多的美化。。。。</p>
-<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;文章标题&quot;</span><br></pre></td></tr></table></figure>
-<p>在博客文件夹 source\_posts 文件夹下看到我们新建的 markdown 文件。</p>
-<p>我们也可以将写好的Markdow文件放在source\_posts 文件夹下，效果和 hexo n是一样的。</p>
-<p>文章编辑好后，执行以下命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="etc"><a href="#etc" class="headerlink" title="etc"></a>etc</h3><h4 id="设置中文"><a href="#设置中文" class="headerlink" title="设置中文"></a>设置中文</h4><p>默认语言是英文，修改 <strong>站点_config.yml</strong> 的language字段<br><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/El3K3CJD3K.png?imageslim" alt="mark"></p>
-<p>NexT 目前支持八种语言版本：</p>
-<table>
-<thead>
-<tr>
-<th>语言</th>
-<th>对应值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>English</td>
-<td>en</td>
-</tr>
-<tr>
-<td>简体中文</td>
-<td>zh-Hans</td>
-</tr>
-<tr>
-<td>法语</td>
-<td>fr-FR</td>
-</tr>
-<tr>
-<td>繁体中文</td>
-<td>zh-hk/zh-tw</td>
-</tr>
-<tr>
-<td>俄语</td>
-<td>ru</td>
-</tr>
-<tr>
-<td>德语</td>
-<td>de</td>
-</tr>
-<tr>
-<td>葡萄牙语</td>
-<td>pt</td>
-</tr>
-<tr>
-<td>日语</td>
-<td>ja</td>
-</tr>
-</tbody>
-</table>
-<h4 id="创建“关于”页面"><a href="#创建“关于”页面" class="headerlink" title="创建“关于”页面"></a>创建“关于”页面</h4><p><strong>新建一个 about 页面：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure></p>
-<p><strong>菜单显示 about 链接</strong></p>
-<p>在<font color="#ffaa00"><strong>主题的 _configy.yml</strong></font> 中将 menu 中 about 前面的注释去掉即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br><span class="line">  about: /about</span><br></pre></td></tr></table></figure></p>
-<h4 id="创建分类页面"><a href="#创建分类页面" class="headerlink" title="创建分类页面"></a>创建分类页面</h4><h5 id="添加-分类-页面，并在菜单中现实页面链接。"><a href="#添加-分类-页面，并在菜单中现实页面链接。" class="headerlink" title="添加 分类 页面，并在菜单中现实页面链接。"></a>添加 分类 页面，并在菜单中现实页面链接。</h5><p><strong>新建一个 “categories” 页面</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure></p>
-<p><strong>编辑新建的页面，将页面类型设置为 categories</strong></p>
-<blockquote>
-<p>title: 分类</p>
-<p>date: 2018-02-01 20:39:19</p>
-<p>type: “categories”</p>
-<p>-–</p>
-</blockquote>
-<p><strong>在菜单中添加链接</strong></p>
-<p>编辑<font color="#ffaa00"><strong>主题的 _configy.yml</strong></font> 中将 menu 中 categories 前面的注释去掉即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br></pre></td></tr></table></figure></p>
+          前言使用Hexo + GitPage 搭建个人博客
+搭建步骤
+系统环境配置
+GitHub创建个人仓库
+推送网站
+绑定域名
+更换主题
+学习MarkDown
+发布文章
+etc
 
-          
+系统环境配置要使用Hexo，需要在你的系统中支持Git和Node.js，如果还没有，那就先安装吧。
+安装Git下载地址：htt
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/01/Hexo +GitPage/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1807,182 +1436,21 @@ Linux总是只有一个单一的文件系统树。
       
         
           
-            <h4 id="Android-Native-进程启动流程"><a href="#Android-Native-进程启动流程" class="headerlink" title="Android Native 进程启动流程"></a>Android Native 进程启动流程</h4><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/8ek7b9Jk2K.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/mJkdiFL95I.png?imageslim" alt="mark"></p>
-<p>ARM传参，R0-R3传递前四个参数</p>
-<h4 id="1-Thumb-指令集特点"><a href="#1-Thumb-指令集特点" class="headerlink" title="1. Thumb 指令集特点"></a>1. Thumb 指令集特点</h4><ul>
-<li>Thumb 指令集指令长度：16或32，16为为主</li>
-<li>Thumb-16 大部分只能访问前8个寄存器 R0-R7（少数可以访问R8-R15）</li>
-<li>Thumb-32 可以访问所有的ARM core 寄存器 R0-R15</li>
-</ul>
-<p>更小、更加灵活</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/3F7Kh72CcJ.png?imageslim" alt="mark"></p>
-<h4 id="2-ARM指令集特点"><a href="#2-ARM指令集特点" class="headerlink" title="2. ARM指令集特点"></a>2. ARM指令集特点</h4><ul>
-<li>指令长度32位，4字节对齐</li>
-<li>功能更加完善</li>
-</ul>
-<h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><table>
-<thead>
-<tr>
-<th>Thumb</th>
-<th>ARM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2字节对齐</td>
-<td>4字节对齐</td>
-</tr>
-<tr>
-<td>占用空间少、密度高</td>
-<td>占用空间较多</td>
-</tr>
-<tr>
-<td>功能不齐全</td>
-<td>功能齐全</td>
-</tr>
-</tbody>
-</table>
-<p>ARM和Thumb指令集各有自己的优点，取长补短往往会得到最好的性能</p>
-<h4 id="3-Opcod-中判断指令集"><a href="#3-Opcod-中判断指令集" class="headerlink" title="3. Opcod 中判断指令集"></a>3. Opcod 中判断指令集</h4><ul>
-<li>Opcode[15:13]== 111 &amp;&amp; Opcode[12:11]!= 00 满足则为32bit 的ARM</li>
-<li>bl #0x80000fbc</li>
-<li>0xed 0xff 0xff 0xeb</li>
-<li><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/HefgcabdgD.png?imageslim" alt="mark"></li>
-</ul>
-<h4 id="4-IDA-中识别与切换指令集"><a href="#4-IDA-中识别与切换指令集" class="headerlink" title="4. IDA 中识别与切换指令集"></a>4. IDA 中识别与切换指令集</h4><ul>
-<li>Edit-&gt;segments-&gt;change segment register value(快捷键ALT+G)</li>
-<li>请看操作。</li>
-</ul>
-<p>这有一段指令，判断出目前是thumb指令集的</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/bDfa164Gm2.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/L44GbeBb0g.png?imageslim" alt="mark"></p>
-<p>按下ALT+G,把0x1改成0x0，就是指定为ARM指令集</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/m6cmAKf7f1.png?imageslim" alt="mark"></p>
-<p>然后按下P键定义函数，函数参数就都分析出来了（</p>
-<h4 id="5-ARM切换指令集原理"><a href="#5-ARM切换指令集原理" class="headerlink" title="5. ARM切换指令集原理"></a>5. ARM切换指令集原理</h4><ul>
-<li>处理器无论在ARM还是Thumb状态下都可以通过BX/BLX/LDR/LDM切换不同的指令集。</li>
-<li>状态切换是由寄存器Rn的最低位来指定的，如果操作数寄存器的状态位Bit0=0，则进入ARM状态，如果Bit0=1，则进入Thumb状态。</li>
-</ul>
-<h4 id="ARM-中对于字节、字、双字的定义"><a href="#ARM-中对于字节、字、双字的定义" class="headerlink" title="ARM 中对于字节、字、双字的定义"></a>ARM 中对于字节、字、双字的定义</h4><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/42LgAImG8C.png?imageslim" alt="mark"></p>
-<p>注意和intel汇编的区别，一个word(字)这里是4个字节</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/k6BCjcgdHD.png?imageslim" alt="mark"></p>
-<p><strong>但是注意一下，在IDA中依然延续着老的传统，一个DCW(word)代表两个字节</strong></p>
-<ul>
-<li><strong>DCB  定义1字节数据</strong></li>
-<li><strong>DCW  定义2字节数据</strong></li>
-<li><strong>DCD  定义4字节数据</strong></li>
-<li><strong>在IDA中，在上面这些数据定义上按下D键可以切换定义的类型</strong></li>
-<li><strong>Array 定义数组，右键或*号键</strong></li>
-</ul>
-<p>数组最常见的就在数组，</p>
-<h3 id="IDA中的自定义数据类型"><a href="#IDA中的自定义数据类型" class="headerlink" title="IDA中的自定义数据类型"></a>IDA中的自定义数据类型</h3><p><strong>Structures 窗口中可以创建一个自定义结构体。按下I或者Ins键即可创建。</strong></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/JGdKAA9LFK.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/6BhFchfIi3.png?imageslim" alt="mark"></p>
-<p>创建了一个名为test的结构体</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/dK8d27jgfb.png?imageslim" alt="mark"></p>
-<p>因为没有定义字段，所以现在都还是空的，结构体长度为0（相当于空结构体，没有任何内容）</p>
-<p>所以去定义字段。</p>
-<h4 id="为自定义数据类型添加字段"><a href="#为自定义数据类型添加字段" class="headerlink" title="为自定义数据类型添加字段"></a>为自定义数据类型添加字段</h4><p>创建完结构体后，长这样：</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/GmCIi75chL.png?imageslim" alt="mark"></p>
-<p>在ends处按下D键就可以定义一个字段了，在字段上按D可以改变长度1/2/4</p>
-<p>其他按键：</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/fJeKmkHmL6.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/Hl91i5EjJE.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/F9JfJKKKBG.png?imageslim" alt="mark"></p>
-<p>这样就可以给一个变量转成自己的结构体类型</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/6llGaFG7k6.png?imageslim" alt="mark"></p>
-<h4 id="应用自定义数据类型"><a href="#应用自定义数据类型" class="headerlink" title="应用自定义数据类型"></a>应用自定义数据类型</h4><p><strong>在起始数据处右键-&gt;Structure-&gt;自定义的数据类型</strong></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/e5bagIfbfD.png?imageslim" alt="mark"></p>
-<h3 id="ARM汇编中的标志寄存器与条件代码"><a href="#ARM汇编中的标志寄存器与条件代码" class="headerlink" title="ARM汇编中的标志寄存器与条件代码"></a>ARM汇编中的标志寄存器与条件代码</h3><h4 id="跳转指令"><a href="#跳转指令" class="headerlink" title="跳转指令"></a>跳转指令</h4><ul>
-<li><strong>b指令</strong>：跳转</li>
-<li><strong>bl指令</strong>：跳转且保存返回地址</li>
-<li><strong>blx/bx指令</strong>：带x，可以切换指令集</li>
-</ul>
-<p><strong>分支指令例子：</strong></p>
-<p><strong>beq</strong>=b+eq（equal)=b指令+条件助记符（参考下面的cond）</p>
-<p><strong>ben</strong></p>
-<h4 id="条件执行"><a href="#条件执行" class="headerlink" title="条件执行"></a>条件执行</h4><p><strong>ARM中大部分的指令都支持带条件执行。</strong></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/aFcH160afA.png?imageslim" alt="mark"></p>
-<p>cond:前四位保存条件码</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/8ecida68KH.png?imageslim" alt="mark"></p>
-<h4 id="比较指令的大用处"><a href="#比较指令的大用处" class="headerlink" title="比较指令的大用处"></a>比较指令的大用处</h4><p><strong>Compare 指令：cmp r0,#1</strong></p>
-<p><strong>完成操作:</strong></p>
-<ol>
-<li>减法运算(不保存结果)</li>
-<li>根据结果更新标志位</li>
-</ol>
-<h4 id="标志寄存器"><a href="#标志寄存器" class="headerlink" title="标志寄存器"></a>标志寄存器</h4><h5 id="APSR-寄存器"><a href="#APSR-寄存器" class="headerlink" title="APSR 寄存器"></a>APSR 寄存器</h5><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/I6IjBIEGhG.png?imageslim" alt="mark"></p>
-<p><strong>标志寄存器是条件执行的基础。</strong><br>N、Z、C、V用于条件标志位<br>N - 负数标志位<br>Z - 零标志位<br>C - 进位标志位<br>V - 溢出标志位</p>
-<p>比如，若减法运算之后为负数，则N为1；为0，则Z=1；</p>
-<h5 id="一些会修改标志位的指令"><a href="#一些会修改标志位的指令" class="headerlink" title="一些会修改标志位的指令"></a>一些会修改标志位的指令</h5><p><strong>1. 指令后缀带S的指令，例如(MOVS)</strong></p>
-<p><strong>2. TST(and)、TEQ(or)、CMN(add)、CMP(sub)</strong></p>
-<p>例如MOVS之后的到的值为0，那么Z就被置位（为1）</p>
-<p><strong>完整一点的例子</strong><br><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/debffk3A60.png?imageslim" alt="完整一点的例子"></p>
-<blockquote>
-<p>这里if有两种可能，一种是a&lt;=10，一种是a&gt;10；</p>
-<p>在汇编中<strong>先cmp a,#10</strong></p>
-<p>然后<strong>选择if括号内相反的选项</strong> bgt next1 (大于则跳转出去)</p>
-<p>然后在这<strong>中间填入if代码块中的内容</strong></p>
-</blockquote>
-<h4 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h4><p><strong>打开程序</strong></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/eAf963eelJ.png?imageslim" alt="mark"></p>
-<p><strong>导出表</strong></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/65Ab19GkKH.png?imageslim" alt="mark"></p>
-<p><a href="http://blog.csdn.net/hgy413/article/details/6598043" target="_blank" rel="noopener">http://blog.csdn.net/hgy413/article/details/6598043</a></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/ijeK017DDJ.png?imageslim" alt="mark"></p>
-<p><strong>libc</strong>init的第三个参数（R2）是main函数的地址</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/kljAI65kFj.png?imageslim" alt="mark"></p>
-<p>跳入main函数之后发现IDA未能把ARM指令集识别正确。需要手动（ALT+G) </p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/DLeG0i8IIb.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/dmfLIFbgC6.png?imageslim" alt="mark"></p>
-<p>随便输入一个不等于0x0的数</p>
-<p>全部改好之后就识别出来了</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/2JFelgFi6a.png?imageslim" alt="mark"></p>
-<p><strong>程序源码</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">0</span>,b = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"This is condition statements re test!\nPlease input two number:"</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">	<span class="keyword">if</span>(a + b == <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"[if]a+b=10\b"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(a &gt; b)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"[if-else-1]a &gt; b\n"</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(a == b)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"[if-else-if] a==b\n"</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"[if-else] a&lt;b \n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(a &gt; <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a &lt;= <span class="number">20</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"[nest if]\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"a &gt; 10\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>自己调试一下</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/I58CbF6A6C.png?imageslim" alt="mark"></p>
-<h3 id="生成thumb代码"><a href="#生成thumb代码" class="headerlink" title="生成thumb代码"></a>生成thumb代码</h3><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/jkcGKL7fbH.png?imageslim" alt="mark"><br>BL的下一条指令的地址被保存在LR寄存器中</p>
-<p>调用gcc的内建函数，R0作为参数</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/7EilLlHJfE.png?imageslim" alt="mark"></p>
-<font color="#ffaa00"><strong>R1=LR=57C（待调试）</strong></font>
+          Android Native 进程启动流程
 
-<font color="#ffaa00"><strong>R1=R1+2=57E（待调试）</strong></font>
-
-<font color="#e00000"><strong>地址做移位是为了对齐（如这里的R1），而数移位是为了做乘除法（如这里的R0）</strong></font>
-
-<p>LSRS:  R1=R1右移两位</p>
-<p>LSLS：R0=R0左移两位=R0*4</p>
-<p>LSLS：R1=R1左移两位 //<strong>先右移再左移，清除R1原来的最低位，用于对齐，</strong><font color="#ffaa00"><strong>得到0x580（待调试）</strong></font></p>
-<p>LDR：R0=[R1+R0] =[580+原来的R0<em>4] //假设原来的R0=1，则R0=[580+原来R0</em>4]=[580+4]=[0x584]=<strong>loc_59C-0x580</strong></p>
-<p>ADDS: R0=R0+R1=loc_59C</p>
-<p>MOV: LR=loc_59C</p>
-<p>POP: 恢复寄存器R0，R1</p>
-<p>MOV: PC=loc_59C;函数结束，跳转到case：选中的代码块</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/7dha4ei960.png?imageslim" alt="mark"></p>
-<p>这些不是代码，是长为4字节的数据项，每一项都是偏移值，<strong>这个偏移值+0x580就能找到真正的代码</strong></p>
-<h3 id="生成ARM代码"><a href="#生成ARM代码" class="headerlink" title="生成ARM代码"></a>生成ARM代码</h3><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/e64JgLd8gc.png?imageslim" alt="mark"></p>
-<p>ADDLS：PC=PC+（R3*4）</p>
-<p>PC的PC寄存器指向的不是下条指令，是下下条指令（也就是当前指令地址+8）</p>
-<h6 id="CEMU测试"><a href="#CEMU测试" class="headerlink" title="CEMU测试"></a>CEMU测试</h6><h6 id="bl-funl-把LR设置为BL指令的下一条地址"><a href="#bl-funl-把LR设置为BL指令的下一条地址" class="headerlink" title="bl funl //把LR设置为BL指令的下一条地址"></a>bl funl //把LR设置为BL指令的下一条地址</h6><h6 id="fun1"><a href="#fun1" class="headerlink" title="fun1:"></a>fun1:</h6><h6 id="mov-r0-pc"><a href="#mov-r0-pc" class="headerlink" title="mov r0,pc"></a>mov r0,pc</h6><h6 id="mov-r1-lr"><a href="#mov-r1-lr" class="headerlink" title="mov r1,lr"></a>mov r1,lr</h6><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/KKmHecaK8C.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/D69cGmkeCF.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/G319AEKc61.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/k7eHK6CLmf.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/4FgIA8aDcm.png?imageslim" alt="mark"></p>
-<p>差了8个字节</p>
-<h3 id="关于ARM中的寄存器PC"><a href="#关于ARM中的寄存器PC" class="headerlink" title="关于ARM中的寄存器PC"></a>关于ARM中的寄存器PC</h3><p><a href="http://blog.csdn.net/tigerjibo/article/details/6050649" target="_blank" rel="noopener">http://blog.csdn.net/tigerjibo/article/details/6050649</a></p>
-<p><a href="http://blog.csdn.net/lee244868149/article/details/49488575" target="_blank" rel="noopener">http://blog.csdn.net/lee244868149/article/details/49488575</a></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180118/8Fg5394hJj.png?imageslim" alt="mark"></p>
-<p>从图中可以看出，一条汇编指令的运行有三个步骤，取指、译码、执行，当第一条汇编指令取指完成后，紧接着就是第二条指令的取指，然后第三条…如此嵌套</p>
-<p>其实很容易看出，第一条指令：</p>
-<p>add r0, r1,$5</p>
-<p>取指完成后，PC就指向了第二条指令，此时PC=PC+4</p>
-<p>当第一条指令译码完成以后，此时PC=PC+8</p>
-<p>所以第一条指令开始执行时，PC值已经加了8</p>
-<p>所以必须记住这个前提，在arm中，每次该指令执行时，其实这时的PC值是PC=PC+8</p>
-<p>而且这个前提也同样适合多级流水线，原因就不解释了</p>
-
-          
+ARM传参，R0-R3传递前四个参数
+1. Thumb 指令集特点
+Thumb 指令集指令长度：16或32，16为为主
+Thumb-16 大部分只能访问前8个寄存器 R0-R7（少数可以访问R8-R15）
+Thumb-32 可以访问所有的ARM core
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/01/ARM汇编/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2141,40 +1609,20 @@ Linux总是只有一个单一的文件系统树。
       
         
           
-            <h4 id="下载烧录镜像"><a href="#下载烧录镜像" class="headerlink" title="下载烧录镜像"></a>下载烧录镜像</h4><p><a href="http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-04-10/" target="_blank" rel="noopener">镜像下载地址</a></p>
-<p><a href="http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-04-10/" target="_blank" rel="noopener">http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-04-10/</a></p>
-<p>写入sd卡（需要一个读卡器</p>
-<p><a href="https://etcher.io/" target="_blank" rel="noopener">下载etcher</a></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/jhlaJBmHh2.png?imageslim" alt="mark"></p>
-<h4 id="镜像烧好后"><a href="#镜像烧好后" class="headerlink" title="镜像烧好后"></a>镜像烧好后</h4><p><strong>在boot路径下新建一个命名为ssh(无后缀）的空白文件，使得ssh默认开启。</strong></p>
-<p>参考这个用一根网线连接电脑去操作（windows）<br> <a href="http://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html" target="_blank" rel="noopener">http://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html</a></p>
-<p> 或者和我一样用一根网线直接插在路由器后面</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/jI44KDfLbD.png?imageslim" alt="mark"></p>
-<p>也可以不用网线，直接配置无线上网，不赘述。<a href="http://shumeipai.nxez.com/2017/09/13/raspberry-pi-network-configuration-before-boot.html" target="_blank" rel="noopener">http://shumeipai.nxez.com/2017/09/13/raspberry-pi-network-configuration-before-boot.html</a></p>
-<h4 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h4><p>找到ip后用ssh远程连接，默认账号密码为</p>
-<p>user:pi</p>
-<p>password:raspberry</p>
-<h4 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h4><p>修改/etc/apt/sources.list为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi</span><br><span class="line"># Uncomment line below then &apos;apt-get update&apos; to enable &apos;apt-get source&apos;</span><br><span class="line"># deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ jessie main ui</span><br></pre></td></tr></table></figure>
-<p>sudo apt-get update</p>
-<h4 id="安装vim"><a href="#安装vim" class="headerlink" title="安装vim"></a>安装vim</h4><p>sudo apt-get install vim</p>
-<h5 id="释放限制空间（封印解除"><a href="#释放限制空间（封印解除" class="headerlink" title="释放限制空间（封印解除"></a>释放限制空间（封印解除</h5><p>sudo raspi-config</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/7GK1f062B3.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/fmG7j880l6.png?imageslim" alt="mark"></p>
-<h4 id="打开vnc"><a href="#打开vnc" class="headerlink" title="打开vnc"></a>打开vnc</h4><p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/g5GE31H6j6.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/2l93FIKKIB.png?imageslim" alt="mark"></p>
-<h6 id="vnc开机自启动设置"><a href="#vnc开机自启动设置" class="headerlink" title="vnc开机自启动设置"></a>vnc开机自启动设置</h6><p>vim  /etc/init.d/vncserver</p>
-<p>然后 复制下面的内容 右键粘贴进去<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">### BEGIN INIT INFO</span><br><span class="line"># Provides:          vncserver</span><br><span class="line"># Required-Start:    $local_fs</span><br><span class="line"># Required-Stop:     $local_fs</span><br><span class="line"># Default-Start:     2 3 4 5</span><br><span class="line"># Default-Stop:      0 1 6</span><br><span class="line"># Short-Description: Start/stop vncserver</span><br><span class="line">### END INIT INFO</span><br><span class="line"> </span><br><span class="line"># More details see:</span><br><span class="line"># http://www.penguintutor.com/linux/vnc</span><br><span class="line"> </span><br><span class="line">### Customize this entry</span><br><span class="line"># Set the USER variable to the name of the user to start vncserver under</span><br><span class="line">export USER=&apos;pi&apos;</span><br><span class="line">### End customization required</span><br><span class="line"> </span><br><span class="line">eval cd ~$USER</span><br><span class="line"> </span><br><span class="line">case &quot;$1&quot; in</span><br><span class="line">  start)</span><br><span class="line">    # 启动命令行。此处自定义分辨率、控制台号码或其它参数。</span><br><span class="line">    su $USER -c &apos;/usr/bin/vncserver -depth 16 -geometry 1024x768 :1&apos;</span><br><span class="line">    echo &quot;Starting VNC server for $USER &quot;</span><br><span class="line">    ;;</span><br><span class="line">  stop)</span><br><span class="line">    # 终止命令行。此处控制台号码与启动一致。</span><br><span class="line">    su $USER -c &apos;/usr/bin/vncserver -kill :1&apos;</span><br><span class="line">    echo &quot;vncserver stopped&quot;</span><br><span class="line">    ;;</span><br><span class="line">  *)</span><br><span class="line">    echo &quot;Usage: /etc/init.d/vncserver &#123;start|stop&#125;&quot;</span><br><span class="line">    exit 1</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure></p>
-<h6 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h6><p>sudo chmod 755 /etc/init.d/vncserver</p>
-<h6 id="添加开机启动项"><a href="#添加开机启动项" class="headerlink" title="添加开机启动项"></a>添加开机启动项</h6><p>sudo update-rc.d vncserver defaults</p>
-<h6 id="最后-重启树莓派"><a href="#最后-重启树莓派" class="headerlink" title="最后 重启树莓派"></a>最后 重启树莓派</h6><p>sudo reboot</p>
-<h6 id="安装VNC-Viewer"><a href="#安装VNC-Viewer" class="headerlink" title="安装VNC Viewer"></a>安装VNC Viewer</h6><p>链接：<a href="https://pan.baidu.com/s/1jJAy7bg" target="_blank" rel="noopener">https://pan.baidu.com/s/1jJAy7bg</a> 密码：gnyy</p>
-<p>输入ip:1</p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/9dC1C8d8Eg.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/eBh80HfKlB.png?imageslim" alt="mark"></p>
-<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180115/0bbcHg69fD.png?imageslim" alt="mark"></p>
+          下载烧录镜像镜像下载地址
+http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-04-10/
+写入sd卡（需要一个读卡器
+下载etcher
 
-          
+镜像烧好后在boot路径下新建一个命名为ssh(无后缀）的空白文件，使得ssh默认开启
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/01/树莓派/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2311,17 +1759,15 @@ Linux总是只有一个单一的文件系统树。
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/31/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
