@@ -81,32 +81,36 @@
 
 
 
-<meta name="description" content="计算机系统基础（二）数据的表示和存储 八进制后缀O 十六进制后缀H 或者前缀Ox 十进制到二进制转换 通过记住1、24、8、16、32、64、128、256、512、1024、 2048、4096、8192、16382、32768、65536 在计算机内部，一个浮点数可以用数的符号、一个定点小数和一个定点整数来表示。 原码（Sign and Magnitude）浮点数尾数用原码定点小数表示 移码表">
+<meta name="description" content="title: 实验吧CTF bin100(ebCTF 2013)date: 2018-02-03 23:31:43tags:categories:   CTF REbin100  运行程序  程序的意思应该是按下回车掷骰子，需要roll到要求的点数才能继续下一步，每一次roll都是随机，并且每多一步概率就需要乘以1/6,概率越来越低，因此需要去除随机性。  OD==在OD中可以通过使用搜索ASC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机系统基础（二）">
-<meta property="og:url" content="http://yoursite.com/2018/02/02/计算机系统基础 (2)/index.html">
+<meta property="og:title" content="VoidR&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/2018/02/25/bin100/index.html">
 <meta property="og:site_name" content="VoidR&#39;s blog">
-<meta property="og:description" content="计算机系统基础（二）数据的表示和存储 八进制后缀O 十六进制后缀H 或者前缀Ox 十进制到二进制转换 通过记住1、24、8、16、32、64、128、256、512、1024、 2048、4096、8192、16382、32768、65536 在计算机内部，一个浮点数可以用数的符号、一个定点小数和一个定点整数来表示。 原码（Sign and Magnitude）浮点数尾数用原码定点小数表示 移码表">
+<meta property="og:description" content="title: 实验吧CTF bin100(ebCTF 2013)date: 2018-02-03 23:31:43tags:categories:   CTF REbin100  运行程序  程序的意思应该是按下回车掷骰子，需要roll到要求的点数才能继续下一步，每一次roll都是随机，并且每多一步概率就需要乘以1/6,概率越来越低，因此需要去除随机性。  OD==在OD中可以通过使用搜索ASC">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2017/10/15/59e36338af080.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/15/59e36fffbf167.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e43d5585541.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e43eb41b160.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e43f69b1411.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e4419fc4d8f.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e4419fd7f2f.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e4419fd37d9.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e4419fe2077.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e4437b4b50f.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e444f2ba9ed.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e4457a5fbe9.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e44584cd418.png">
-<meta property="og:image" content="https://i.loli.net/2017/10/16/59e4461ba63cd.png">
-<meta property="og:updated_time" content="2018-02-25T06:39:25.974Z">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1e8817a48f.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1f059d1c34.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1f0be907b3.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1f1707d4ad.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1f2648f0f7.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1f2bb6b4c7.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1f5147fbb6.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1fc1a52130.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1ffd72668d.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1ffd71d1ba.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1ffd72f921.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f1ffd73a7ce.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f2005522695.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f20203a1511.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f20203a8c7e.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f20203819db.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f2020389933.png">
+<meta property="og:image" content="https://i.loli.net/2017/10/26/59f202b09e2a2.png">
+<meta property="og:updated_time" content="2018-02-25T08:48:59.809Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机系统基础（二）">
-<meta name="twitter:description" content="计算机系统基础（二）数据的表示和存储 八进制后缀O 十六进制后缀H 或者前缀Ox 十进制到二进制转换 通过记住1、24、8、16、32、64、128、256、512、1024、 2048、4096、8192、16382、32768、65536 在计算机内部，一个浮点数可以用数的符号、一个定点小数和一个定点整数来表示。 原码（Sign and Magnitude）浮点数尾数用原码定点小数表示 移码表">
-<meta name="twitter:image" content="https://i.loli.net/2017/10/15/59e36338af080.png">
+<meta name="twitter:title" content="VoidR&#39;s blog">
+<meta name="twitter:description" content="title: 实验吧CTF bin100(ebCTF 2013)date: 2018-02-03 23:31:43tags:categories:   CTF REbin100  运行程序  程序的意思应该是按下回车掷骰子，需要roll到要求的点数才能继续下一步，每一次roll都是随机，并且每多一步概率就需要乘以1/6,概率越来越低，因此需要去除随机性。  OD==在OD中可以通过使用搜索ASC">
+<meta name="twitter:image" content="https://i.loli.net/2017/10/26/59f1e8817a48f.png">
 
 
 
@@ -136,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/02/计算机系统基础 (2)/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/25/bin100/"/>
 
 
 
 
 
-  <title>计算机系统基础（二） | VoidR's blog</title>
+  <title> | VoidR's blog</title>
   
 
 
@@ -269,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/02/计算机系统基础 (2)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/bin100/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VoidR">
@@ -286,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">计算机系统基础（二）</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -298,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T10:21:44+08:00">
-                2018-02-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T16:28:04+08:00">
+                2018-02-25
               </time>
             
 
@@ -308,28 +312,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机系统基础/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机系统基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -352,7 +334,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  716
+                  421
                 </span>
               
 
@@ -377,69 +359,72 @@
       
 
       
-        <h2 id="计算机系统基础（二）"><a href="#计算机系统基础（二）" class="headerlink" title="计算机系统基础（二）"></a>计算机系统基础（二）</h2><h3 id="数据的表示和存储"><a href="#数据的表示和存储" class="headerlink" title="数据的表示和存储"></a>数据的表示和存储</h3><ol>
-<li>八进制后缀O 十六进制后缀H 或者前缀Ox</li>
-<li>十进制到二进制转换 通过记住1、24、8、16、32、64、128、256、512、1024、<br> 2048、4096、8192、16382、32768、65536</li>
-<li>在计算机内部，一个浮点数可以用数的符号、一个定点小数和一个定点整数来表示。<br><img src="https://i.loli.net/2017/10/15/59e36338af080.png" alt="TIM截图20171015213123.png"></li>
-<li>原码（Sign and Magnitude）浮点数尾数用原码定点小数表示<br><img src="https://i.loli.net/2017/10/15/59e36fffbf167.png" alt="TIM截图20171015222558.png"></li>
-<li>移码表示 将每一个数值加上一个偏置常数。便于浮点数加减运算时的对阶操作（比较大小）。通常，当编码位数为n时，bias取2<sup>n-1</sup>或2<sup>n-1</sup>-1。当bias取2<sup>n-1</sup>时，移码和补码仅第一位不同，移码用来表示浮点数的阶。</li>
-<li>补码 （模运算）来表示带符号整数。在一个模运算系统中，一个数与它除以模后的余数等价。一个负数的补码等于将对应正数补码各位取反，末位加一。  一个负数的补码等于模减该负数的绝对值。负数的补码等于对应正数补码各位取反，末位加一。</li>
-<li>最低有效位 LSB 最高有效位 MSB</li>
-<li>存储器的编址方式：大端方式和小端方式<h3 id="运算电路"><a href="#运算电路" class="headerlink" title="运算电路"></a>运算电路</h3><h5 id="C语言中的运算"><a href="#C语言中的运算" class="headerlink" title="C语言中的运算"></a>C语言中的运算</h5></li>
-<li>算术运算</li>
-<li>按位运算 对位串实现掩码操作或相应的其他处理（主要用于对多媒体数据或状态/控制信息进行处理）。</li>
-<li>移位运算 提取部分信息，扩大或缩小2、4、8…倍。</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e43d5585541.png" alt="TIM截图20171016130207.png"></p>
-<ol>
-<li>逻辑运算 用于关系表达式的运算</li>
-<li>位扩展和位截断 类型转换</li>
-</ol>
-<h5 id="整数加减运算"><a href="#整数加减运算" class="headerlink" title="整数加减运算"></a>整数加减运算</h5><p><img src="https://i.loli.net/2017/10/16/59e43eb41b160.png" alt="TIM截图20171016130750.png"></p>
+        <hr>
+<p>title: 实验吧CTF bin100(ebCTF 2013)<br>date: 2018-02-03 23:31:43<br>tags:<br>categories: </p>
 <ul>
-<li>计算机中所有运算都基于加法器实现</li>
-<li>加法器不知道所运算的的是带符号数还是无符号数</li>
-<li><p>加法器不判定对错，总是取低n位作为结果，并生成标志信息。<br><img src="https://i.loli.net/2017/10/16/59e43f69b1411.png" alt="TIM截图20171016131101.png"><br>溢出公式</p>
-</li>
-<li><p>无符号减公式</p>
-</li>
-<li><img src="https://i.loli.net/2017/10/16/59e4419fc4d8f.png" alt="无符号减公式.png"></li>
-<li>带符号减公式</li>
-<li><img src="https://i.loli.net/2017/10/16/59e4419fd7f2f.png" alt="带符号减公式.png"></li>
-<li>无符号加公式</li>
-<li><img src="https://i.loli.net/2017/10/16/59e4419fd37d9.png" alt="无符号加公式.png"></li>
-<li>带符号加公式</li>
-<li><img src="https://i.loli.net/2017/10/16/59e4419fe2077.png" alt="带符号加公式.png"></li>
+<li>CTF</li>
+<li>RE<h2 id="bin100"><a href="#bin100" class="headerlink" title="bin100"></a>bin100</h2></li>
 </ul>
-<h3 id="乘除运算及浮点数运算"><a href="#乘除运算及浮点数运算" class="headerlink" title="乘除运算及浮点数运算"></a>乘除运算及浮点数运算</h3><ol>
-<li>整数的乘法运算</li>
-</ol>
-<p>整数乘法溢出漏洞</p>
-<p><img src="https://i.loli.net/2017/10/16/59e4437b4b50f.png" alt="TIM截图20171016132823.png"></p>
-<p>编译器在处理变量和常数相乘时，往往以移位、加位和减法的组合运算来代替乘法运算。</p>
-<ol>
-<li>整数除法运算</li>
-</ol>
-<p>编译器在处理一个变量与一个2的幂次形式的整数相除时，常采用右移运算来实现。</p>
-<p>变量与常数之间的除运算</p>
-<p><img src="https://i.loli.net/2017/10/16/59e444f2ba9ed.png" alt="TIM截图20171016133422.png"></p>
-<ol>
-<li>浮点数运算</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e4457a5fbe9.png" alt="TIM截图20171016133630.png"></p>
-<p>上述过程可能出现的情况</p>
-<p><img src="https://i.loli.net/2017/10/16/59e44584cd418.png" alt="TIM截图20171016133652.png"></p>
-<p>IEEE 754 标准规定的五种异常</p>
-<ol>
-<li>无效运算（无意义）</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e4461ba63cd.png" alt="1.png"></p>
-<ol>
-<li>除以0（即无穷大）</li>
-<li>数太大（阶上溢）</li>
-<li>数太小（阶下溢）</li>
-<li>结果不精确（舍入）</li>
-</ol>
+<h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4><p><img src="https://i.loli.net/2017/10/26/59f1e8817a48f.png" alt="open.png"></p>
+<blockquote>
+<p>程序的意思应该是按下回车掷骰子，需要roll到要求的点数才能继续下一步，每一次roll都是随机，并且每多一步概率就需要乘以1/6,概率越来越低，因此需要去除随机性。</p>
+</blockquote>
+<h4 id="OD"><a href="#OD" class="headerlink" title="OD"></a>OD</h4><p>==在OD中可以通过使用搜索ASCLL的方法找到程序的输出==</p>
+<p><img src="https://i.loli.net/2017/10/26/59f1f059d1c34.png" alt="搜索 ASCLL.png"></p>
+<h6 id="搜索结果"><a href="#搜索结果" class="headerlink" title="搜索结果"></a>搜索结果</h6><p><img src="https://i.loli.net/2017/10/26/59f1f0be907b3.png" alt="结果.png"></p>
+<blockquote>
+<p>可以双击跳转到对应语句，去看输出 “You rolled a three! Good!” 的条件</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/10/26/59f1f1707d4ad.png" alt="双击.png"></p>
+<p><img src="https://i.loli.net/2017/10/26/59f1f2648f0f7.png" alt="语句.png"></p>
+<blockquote>
+<p>可以看到在这条语句前有一组cmp和jnz。</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/10/26/59f1f2bb6b4c7.png" alt="jnz.png"></p>
+<blockquote>
+<p>可以得知若不等则转移到不输出”You rolled a three! Good!”的语句，但是我是想消除随机性（提高概率）让他在没有roll到3的情况下也能成功到下一步。</p>
+<p>可以将jnz取反将条件变成jz（等则转移），从而提高概率。</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/10/26/59f1f5147fbb6.png" alt="je.png"></p>
+<blockquote>
+<p>在这里发现改了jz之后OD里自动变成了je。两者都是看ZF为1则转移。百度上也说两者没有区别。。。</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/10/26/59f1fc1a52130.png" alt="搜索.png"></p>
+<blockquote>
+<p>(居然是要求roll到7的)</p>
+<p>根据上面的方法把这五个语句上面的jnz改成je/jz，概率就从</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(\frac&#123;1&#125;&#123;6&#125;)^5</span><br></pre></td></tr></table></figure>
+<p>变为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(\frac&#123;5&#125;&#123;6&#125;)^5</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.loli.net/2017/10/26/59f1ffd72668d.png" alt="复制到可执行文件.png"></p>
+<p><img src="https://i.loli.net/2017/10/26/59f1ffd71d1ba.png" alt="全部复制.png"></p>
+<p><img src="https://i.loli.net/2017/10/26/59f1ffd72f921.png" alt="保存文件.png"></p>
+<blockquote>
+<p>Ctrl+s 貌似不可以保存（在我的机子上不会出现另存为的框）</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/10/26/59f1ffd73a7ce.png" alt="另存为.png"></p>
+<blockquote>
+<p>这就将patch过的程序保存了</p>
+<p>再运行patch过的文件</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/10/26/59f2005522695.png" alt="cmd运行.png"></p>
+<blockquote>
+<p>在第五次roll时，程序依旧会快速结束。</p>
+<p>解决：在powershell下运行</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/10/26/59f20203a1511.png" alt="power.png"></p>
+<p><img src="https://i.loli.net/2017/10/26/59f20203a8c7e.png" alt="拖入运行.png"></p>
+<p><img src="https://i.loli.net/2017/10/26/59f20203819db.png" alt="真开心.png"></p>
+<blockquote>
+<p>脸黑的还是会失败 </p>
+<p>再次尝试下 得到了flag</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/10/26/59f2020389933.png" alt="flag.png"></p>
+<p><img src="https://i.loli.net/2017/10/26/59f202b09e2a2.png" alt="复制.png"></p>
+<p>[*] Nice job, here is the flag: ebCTF{64ec47ece868ba34a425d90044cd2dec}</p>
+<blockquote>
+<p>从这道题中学会了OD下patch的方法。得知了power shell。</p>
+</blockquote>
 
       
     </div>
@@ -464,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/02/计算机系统基础 (1)/" rel="next" title="计算机系统基础（一）">
-                <i class="fa fa-chevron-left"></i> 计算机系统基础（一）
+              <a href="/2018/02/03/findkey/" rel="next" title="请你协助他 findkey">
+                <i class="fa fa-chevron-left"></i> 请你协助他 findkey
               </a>
             
           </div>
@@ -473,10 +458,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/02/计算机系统基础 (3)/" rel="prev" title="计算机系统基础（三）">
-                计算机系统基础（三） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -606,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机系统基础（二）"><span class="nav-number">1.</span> <span class="nav-text">计算机系统基础（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据的表示和存储"><span class="nav-number">1.1.</span> <span class="nav-text">数据的表示和存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算电路"><span class="nav-number">1.2.</span> <span class="nav-text">运算电路</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C语言中的运算"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">C语言中的运算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#整数加减运算"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">整数加减运算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#乘除运算及浮点数运算"><span class="nav-number">1.3.</span> <span class="nav-text">乘除运算及浮点数运算</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#bin100"><span class="nav-number">1.</span> <span class="nav-text">bin100</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#运行程序"><span class="nav-number">1.0.1.</span> <span class="nav-text">运行程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OD"><span class="nav-number">1.0.2.</span> <span class="nav-text">OD</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#搜索结果"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">搜索结果</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

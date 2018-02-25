@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-25T06:17:21.780Z</updated>
+  <updated>2018-02-25T08:48:59.809Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/02/25/bin100/"/>
+    <id>http://yoursite.com/2018/02/25/bin100/</id>
+    <published>2018-02-25T08:28:04.749Z</published>
+    <updated>2018-02-25T08:48:59.809Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title: 实验吧CTF bin100(ebCTF 2013)<br>date: 2018-02-03 23:31:43<br>tags:<br>categories: </p><ul><li>CTF</li><li>RE<h2 id="bin100"><a href="#bin100" class="headerlink" title="bin100"></a>bin100</h2></li></ul><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4><p><img src="https://i.loli.net/2017/10/26/59f1e8817a48f.png" alt="open.png"></p><blockquote><p>程序的意思应该是按下回车掷骰子，需要roll到要求的点数才能继续下一步，每一次roll都是随机，并且每多一步概率就需要乘以1/6,概率越来越低，因此需要去除随机性。</p></blockquote><h4 id="OD"><a href="#OD" class="headerlink" title="OD"></a>OD</h4><p>==在OD中可以通过使用搜索ASCLL的方法找到程序的输出==</p><p><img src="https://i.loli.net/2017/10/26/59f1f059d1c34.png" alt="搜索 ASCLL.png"></p><h6 id="搜索结果"><a href="#搜索结果" class="headerlink" title="搜索结果"></a>搜索结果</h6><p><img src="https://i.loli.net/2017/10/26/59f1f0be907b3.png" alt="结果.png"></p><blockquote><p>可以双击跳转到对应语句，去看输出 “You rolled a three! Good!” 的条件</p></blockquote><p><img src="https://i.loli.net/2017/10/26/59f1f1707d4ad.png" alt="双击.png"></p><p><img src="https://i.loli.net/2017/10/26/59f1f2648f0f7.png" alt="语句.png"></p><blockquote><p>可以看到在这条语句前有一组cmp和jnz。</p></blockquote><p><img src="https://i.loli.net/2017/10/26/59f1f2bb6b4c7.png" alt="jnz.png"></p><blockquote><p>可以得知若不等则转移到不输出”You rolled a three! Good!”的语句，但是我是想消除随机性（提高概率）让他在没有roll到3的情况下也能成功到下一步。</p><p>可以将jnz取反将条件变成jz（等则转移），从而提高概率。</p></blockquote><p><img src="https://i.loli.net/2017/10/26/59f1f5147fbb6.png" alt="je.png"></p><blockquote><p>在这里发现改了jz之后OD里自动变成了je。两者都是看ZF为1则转移。百度上也说两者没有区别。。。</p></blockquote><p><img src="https://i.loli.net/2017/10/26/59f1fc1a52130.png" alt="搜索.png"></p><blockquote><p>(居然是要求roll到7的)</p><p>根据上面的方法把这五个语句上面的jnz改成je/jz，概率就从</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(\frac&#123;1&#125;&#123;6&#125;)^5</span><br></pre></td></tr></table></figure><p>变为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(\frac&#123;5&#125;&#123;6&#125;)^5</span><br></pre></td></tr></table></figure></p><p><img src="https://i.loli.net/2017/10/26/59f1ffd72668d.png" alt="复制到可执行文件.png"></p><p><img src="https://i.loli.net/2017/10/26/59f1ffd71d1ba.png" alt="全部复制.png"></p><p><img src="https://i.loli.net/2017/10/26/59f1ffd72f921.png" alt="保存文件.png"></p><blockquote><p>Ctrl+s 貌似不可以保存（在我的机子上不会出现另存为的框）</p></blockquote><p><img src="https://i.loli.net/2017/10/26/59f1ffd73a7ce.png" alt="另存为.png"></p><blockquote><p>这就将patch过的程序保存了</p><p>再运行patch过的文件</p></blockquote><p><img src="https://i.loli.net/2017/10/26/59f2005522695.png" alt="cmd运行.png"></p><blockquote><p>在第五次roll时，程序依旧会快速结束。</p><p>解决：在powershell下运行</p></blockquote><p><img src="https://i.loli.net/2017/10/26/59f20203a1511.png" alt="power.png"></p><p><img src="https://i.loli.net/2017/10/26/59f20203a8c7e.png" alt="拖入运行.png"></p><p><img src="https://i.loli.net/2017/10/26/59f20203819db.png" alt="真开心.png"></p><blockquote><p>脸黑的还是会失败 </p><p>再次尝试下 得到了flag</p></blockquote><p><img src="https://i.loli.net/2017/10/26/59f2020389933.png" alt="flag.png"></p><p><img src="https://i.loli.net/2017/10/26/59f202b09e2a2.png" alt="复制.png"></p><p>[*] Nice job, here is the flag: ebCTF{64ec47ece868ba34a425d90044cd2dec}</p><blockquote><p>从这道题中学会了OD下patch的方法。得知了power shell。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;title: 实验吧CTF bin100(ebCTF 2013)&lt;br&gt;date: 2018-02-03 23:31:43&lt;br&gt;tags:&lt;br&gt;categories: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CTF&lt;/li&gt;
+&lt;li&gt;RE&lt;h2 id=&quot;bin100&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>请你协助他 findkey</title>
+    <link href="http://yoursite.com/2018/02/03/findkey/"/>
+    <id>http://yoursite.com/2018/02/03/findkey/</id>
+    <published>2018-02-03T14:51:43.000Z</published>
+    <updated>2018-02-25T08:51:42.511Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="findkey"><a href="#findkey" class="headerlink" title="findkey"></a>findkey</h2><h3 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h3><p><img src="https://i.loli.net/2017/10/27/59f31a8fa7c65.png" alt="运行.png"></p><blockquote><p>输入用户名，输入错误程序会直接结束。</p></blockquote><h3 id="IDA"><a href="#IDA" class="headerlink" title="IDA"></a>IDA</h3><p><img src="https://i.loli.net/2017/10/27/59f31a8fb5e92.png" alt="key.png"></p><blockquote><p>在这里可以看到一个key</p><p>交上去。。</p></blockquote><p><img src="https://i.loli.net/2017/10/27/59f31b5767d64.png" alt="ac.png"></p><blockquote><p>过了。。</p></blockquote><h4 id="动态调试"><a href="#动态调试" class="headerlink" title="动态调试"></a>动态调试</h4><p><img src="https://i.loli.net/2017/10/27/59f31c33abee6.png" alt="输入.png"></p><blockquote><p>设置断点后一直F8直到停止，找到输入的语句。在这里我输入了“123456”。</p></blockquote><p><img src="https://i.loli.net/2017/10/27/59f31c33aaf59.png" alt="输入的值.png"></p><blockquote><p>在之后的一步 lea  eax,[esp+58h+var_18] 为eax取了一个地址，这个地址就是刚刚输入的用户名。</p></blockquote><p><img src="https://i.loli.net/2017/10/27/59f323913cf41.png" alt="8位.png"></p><blockquote><p>之后的语句，是一个判断输入的用户名是否达到8位，用户名必须大于8位。</p></blockquote><p><img src="https://i.loli.net/2017/10/27/59f33686649b9.png" alt="超过8位.png"></p><blockquote><p>输入的用户名超过8位后，下两条语句是取了两个地址，分别是输入的用户名以及McDull@Aun疑似真实用户名，所以下一步可能会将输入的用户名和McDull@Aun进行比较，如果之后出现将两者比较的语句，我们可以把McDull@Aun确定为用户名。</p></blockquote><p><img src="https://i.loli.net/2017/10/27/59f337565342b.png" alt="输入用户名.png"></p><p><img src="https://i.loli.net/2017/10/27/59f337565be2b.png" alt="用户名.png"></p><p><img src="https://i.loli.net/2017/10/27/59f337565cefd.png" alt="输入比较.png"></p><blockquote><p>由此得知McDull@Aun是用户名。</p><p>重新输入正确用户名后，一直F8到输入密码的语句。</p></blockquote><p><img src="https://i.loli.net/2017/10/28/59f35b77ac340.png" alt="输入密码.png"></p><blockquote><p>输入的密码不能超过十一位。</p></blockquote><p><img src="https://i.loli.net/2017/10/28/59f35b9a8ca28.png" alt="密码不能超过10位.png"></p><blockquote><p>之后是将输入的密码与{0x10,0x2A,0x35,0x3A,0x1B,0x3C,0x33,3,0x22,0x23}异或</p></blockquote><p><img src="https://i.loli.net/2017/10/28/59f35d811a6df.png" alt="异或.png"></p><blockquote><p>并将异或后的值存入[esp+eax+50h+var_25]</p></blockquote><p><img src="https://i.loli.net/2017/10/28/59f35e37aafbc.png" alt="比较.png"></p><blockquote><p>再把[esp+eax+50h+var_25]中的值与”I_LOVE_CTF”比较是否相等。</p><p>因为a ⊕ b ⊕ b = a. 将{0x10,0x2A,0x35,0x3A,0x1B,0x3C,0x33,3,0x22,0x23}与”I_LOVE_CTF”异或可以得到正确的密码.</p></blockquote><p> <img src="https://i.loli.net/2017/10/28/59f3609946238.png" alt="密码.png"></p><blockquote><p>得到密码 YuyuMyl@ve </p><p>然而错了。。因为密码是十一位的。。</p></blockquote><p><img src="https://i.loli.net/2017/10/28/59f3647d19b2f.png" alt="正确.png"></p><p>==在IDA中，将鼠标放在地址上，只能看到这个地址开始后的十个，应该enter去看看全部的数据。==</p><blockquote><p>所以应该将{0x10,0x2A,0x35,0x3A,0x1B,0x3C,0x33,3,0x22,0x23，0x7E}与”I_LOVE<em>CTF</em>“异或可以得到正确的密码.</p></blockquote><p><img src="https://i.loli.net/2017/10/28/59f36556119b7.png" alt="正确密码.png"></p><blockquote><p>得到正确密码”YuyuMyl@ve!” </p></blockquote><p><img src="https://i.loli.net/2017/10/28/59f365f99b0e5.png" alt="key.png"></p><blockquote><p>得到KEY{管理员密码}  </p></blockquote><h6 id="这道逆向题，重要的数据都在栈中，要尝试通过地址去看栈中的数据，尽量enter去看完整的数据。"><a href="#这道逆向题，重要的数据都在栈中，要尝试通过地址去看栈中的数据，尽量enter去看完整的数据。" class="headerlink" title="这道逆向题，重要的数据都在栈中，要尝试通过地址去看栈中的数据，尽量enter去看完整的数据。"></a>这道逆向题，重要的数据都在栈中，要尝试通过地址去看栈中的数据，尽量enter去看完整的数据。</h6>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;findkey&quot;&gt;&lt;a href=&quot;#findkey&quot; class=&quot;headerlink&quot; title=&quot;findkey&quot;&gt;&lt;/a&gt;findkey&lt;/h2&gt;&lt;h3 id=&quot;运行程序&quot;&gt;&lt;a href=&quot;#运行程序&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+      <category term="CTF" scheme="http://yoursite.com/categories/CTF/"/>
+    
+      <category term="RE" scheme="http://yoursite.com/categories/CTF/RE/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>实验吧CTF 转瞬即逝</title>
+    <link href="http://yoursite.com/2018/02/03/%E8%BD%AC%E7%9E%AC%E5%8D%B3%E9%80%9D/"/>
+    <id>http://yoursite.com/2018/02/03/转瞬即逝/</id>
+    <published>2018-02-03T14:31:43.000Z</published>
+    <updated>2018-02-25T08:43:02.959Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="转瞬即逝"><a href="#转瞬即逝" class="headerlink" title="转瞬即逝"></a>转瞬即逝</h2><h4 id="尝试运行程序"><a href="#尝试运行程序" class="headerlink" title="尝试运行程序"></a>尝试运行程序</h4><p>文件是.rev1 所以放弃直接打开</p><h4 id="IDA反汇编"><a href="#IDA反汇编" class="headerlink" title="IDA反汇编"></a>IDA反汇编</h4><p><img src="https://i.loli.net/2017/10/26/59f1cfb1e3c1a.png" alt="rev1_IDA.png"></p><h4 id="IDA-F5-伪代码"><a href="#IDA-F5-伪代码" class="headerlink" title="IDA-F5 伪代码"></a>IDA-F5 伪代码</h4><p><img src="https://i.loli.net/2017/10/26/59f1d0877c895.png" alt="f5.png"></p><p>==先试试F5，若能得到伪代码，先观察伪代码。毕竟伪代码比汇编易懂些。==</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strcpy</span>(s, <span class="string">"tikp[luX|aoTjaoh"</span>);</span><br><span class="line">v3 = <span class="built_in">strlen</span>(s);</span><br><span class="line">ptr = <span class="built_in">malloc</span>(v3);</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"Welcome!"</span>);</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"This is a x64 REV,find out the flag."</span>);</span><br><span class="line"><span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(s); ++i )</span><br><span class="line">&#123;</span><br><span class="line">    ptr[i] = s[i] ^ i;</span><br><span class="line">    ptr[i] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"CTF&#123;%s&#125;\n"</span>, ptr);</span><br></pre></td></tr></table></figure><blockquote><p>在这道题中，可以发现题目是将s字符串”tikp[luX|aoTjaoh”中的字符的ascll码与其序号（从0开始）进行异或，再输出。</p><p>只是在输出前 进行了 <strong>ptr[i] = 0</strong>，将输出数组str内字符ascll置为0，导致输出了空字符。 </p><p>因此可以尝试删掉这条语句，看看能否得出flag。</p></blockquote><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">char</span> s[]=<span class="string">"tikp[luX|aoTjaoh"</span>,str[<span class="number">30</span>];</span><br><span class="line"><span class="built_in">memset</span>(str,<span class="number">0</span>,<span class="keyword">sizeof</span>(str));</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">strlen</span>(s);i++)</span><br><span class="line">&#123;</span><br><span class="line">str[i]=s[i]^i;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%c"</span>,str[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>运行结果如下</p></blockquote><p><img src="https://i.loli.net/2017/10/26/59f1dd8d88daf.png" alt="flag.png"></p><blockquote><p>得到flag  this_is_the_flag。</p></blockquote><h6 id="对于简单逆向题，先尝试F5得到伪代码，若可以得到的话，伪代码更加易懂。"><a href="#对于简单逆向题，先尝试F5得到伪代码，若可以得到的话，伪代码更加易懂。" class="headerlink" title="对于简单逆向题，先尝试F5得到伪代码，若可以得到的话，伪代码更加易懂。"></a>对于简单逆向题，先尝试F5得到伪代码，若可以得到的话，伪代码更加易懂。</h6><h6 id="不过还能遇到这种题嘛"><a href="#不过还能遇到这种题嘛" class="headerlink" title="不过还能遇到这种题嘛~"></a>不过还能遇到这种题嘛~</h6>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;转瞬即逝&quot;&gt;&lt;a href=&quot;#转瞬即逝&quot; class=&quot;headerlink&quot; title=&quot;转瞬即逝&quot;&gt;&lt;/a&gt;转瞬即逝&lt;/h2&gt;&lt;h4 id=&quot;尝试运行程序&quot;&gt;&lt;a href=&quot;#尝试运行程序&quot; class=&quot;headerlink&quot; title=&quot;尝试运行程
+      
+    
+    </summary>
+    
+      <category term="CTF" scheme="http://yoursite.com/categories/CTF/"/>
+    
+      <category term="RE" scheme="http://yoursite.com/categories/CTF/RE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>CPU运行原理</title>
@@ -199,27 +274,6 @@
     </summary>
     
       <category term="IoT" scheme="http://yoursite.com/categories/IoT/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/01/31/hello-world/"/>
-    <id>http://yoursite.com/2018/01/31/hello-world/</id>
-    <published>2018-01-30T17:45:38.982Z</published>
-    <updated>2018-01-30T17:45:38.982Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
     
     
   </entry>
