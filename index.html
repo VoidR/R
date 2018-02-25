@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/计算机系统基础 (1)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/02/CPU运行原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VoidR">
@@ -271,7 +271,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/25/计算机系统基础 (1)/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/02/02/CPU运行原理/" itemprop="url">CPU运行原理</a></h1>
         
 
         <div class="post-meta">
@@ -283,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T00:16:05+08:00">
-                2018-02-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T10:34:44+08:00">
+                2018-02-02
               </time>
             
 
@@ -293,6 +293,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机系统基础/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机系统基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -315,7 +337,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  739
+                  108
                 </span>
               
 
@@ -342,38 +364,29 @@
       
         
           
-            <h2 id="计算机系统基础（一）"><a href="#计算机系统基础（一）" class="headerlink" title="计算机系统基础（一）"></a>计算机系统基础（一）</h2><h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><pre><code>图形用户界面 GUI
-命令行界面 CLI
-</code></pre><h3 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h3><h5 id="终端仿真器"><a href="#终端仿真器" class="headerlink" title="终端仿真器"></a>终端仿真器</h5><pre><code>Ctrl-c 和Ctrl-v 不起作用。
-</code></pre><h5 id="一些简单命令"><a href="#一些简单命令" class="headerlink" title="一些简单命令"></a>一些简单命令</h5><pre><code>date 显示当前时间和日期
-cal 显示当前月份的日历
-df 查看磁盘剩余空间的数量
-free 显示空闲内存的数量
-exit 终止终端会话
-</code></pre><p><img src="https://i.loli.net/2017/10/14/59e20ee6a1b88.png" alt="TIM截图20171014211103.png"><br><img src="https://i.loli.net/2017/10/14/59e211ea40138.png" alt="TIM截图20171014213215.png"></p>
-<h5 id="幕后控制台"><a href="#幕后控制台" class="headerlink" title="幕后控制台"></a>幕后控制台</h5><pre><code>即使终端仿真器没有运行，在后台仍然有几个终端会话运行着。他们叫做虚拟终端或者是虚拟控制台。
-可以通过 Ctrl-Alt-F1 到 Ctrl-Alt-F6 访问。回到图形桌面，按下Alt-F7.
-</code></pre><h3 id="文件系统中跳转"><a href="#文件系统中跳转" class="headerlink" title="文件系统中跳转"></a>文件系统中跳转</h3><h5 id="文件系统树"><a href="#文件系统树" class="headerlink" title="文件系统树"></a>文件系统树</h5><pre><code>Linux 以分层目录结构来组织所有文件。这就意味着所有文件组成了一颗树型目录。文件系统中的第一级目录称为根目录。
-根目录包含文件和子目录，子目录包含更多的文件和子目录，以此类推。
-Linux总是只有一个单一的文件系统树。
-</code></pre><h5 id="pwd—打印出当前工作目录名"><a href="#pwd—打印出当前工作目录名" class="headerlink" title="pwd—打印出当前工作目录名"></a>pwd—打印出当前工作目录名</h5><pre><code>当用户以普通用户的身份操控系统时，家目录是唯一允许用户对文件进行写入的地方。每个用户都有他自己的家目录。
-</code></pre><h5 id="ls—列出目录内容"><a href="#ls—列出目录内容" class="headerlink" title="ls—列出目录内容"></a>ls—列出目录内容</h5><pre><code>用ls命令可以列出人一个目录的内容，而不只是当前工作目录的内容。
-</code></pre><h5 id="cd—更改目录"><a href="#cd—更改目录" class="headerlink" title="cd—更改目录"></a>cd—更改目录</h5><pre><code>输入cd，然后输入你想要去的工作目录的路径名。路径名可以通过两种方式来指定，一种是绝对路径，另一种是相对路径。
-1. 绝对路径
-绝对路径开始于根目录，紧跟着目录树的一个个分支，一直到达所期望的目录或文件。
-/usr/bin 它意味着从根目录（开头的“/”表示）开始，有一个叫“usr”的目录包含了目录“bin”。
-2. 相对路径
-相对路径开始于工作目录。我们在文件系统树中用一对特殊符号来表示相对位置。“.”（点）指的是工作目录，“..”（点点）指的是工作目录的父目录。
-（ “./”几乎在所有情况下可以省略，它是隐含的输入）
-</code></pre><h5 id="有用的快捷键"><a href="#有用的快捷键" class="headerlink" title="有用的快捷键"></a>有用的快捷键</h5><pre><code>&gt; cd    更改工作目录到你的家目录
-&gt; cd-   更改工作目录到先前的工作目录
-&gt; cd~user_name 更改工作目录到用户家目录。
+            <h2 id="CPU运行原理"><a href="#CPU运行原理" class="headerlink" title="CPU运行原理"></a>CPU运行原理</h2><h4 id="计算机组成部分"><a href="#计算机组成部分" class="headerlink" title="计算机组成部分"></a>计算机组成部分</h4><ol>
+<li>控制器 对程序规定的控制信息进行解释</li>
+<li>运算器 对数据进行加工处理</li>
+<li>存储器 存储程序、数据和各种信号、命令等信息，并在需要时提供这些信息。</li>
+<li>输入</li>
+<li>输出</li>
+</ol>
+<h4 id="CPU的内部架构"><a href="#CPU的内部架构" class="headerlink" title="CPU的内部架构"></a>CPU的内部架构</h4><p><img src="https://i.loli.net/2017/10/16/59e48a1a81773.png" alt="TIM截图20171016182916.png"></p>
+<h4 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h4><ol>
+<li>数据总线</li>
+</ol>
+<p><img src="https://i.loli.net/2017/10/16/59e48a9b59691.png" alt="数据总线.png"></p>
+<ol>
+<li>地址总线</li>
+</ol>
+<p><img src="https://i.loli.net/2017/10/16/59e48a9b604a2.png" alt="地址总线.png"></p>
+<ol>
+<li>控制总线</li>
+</ol>
+<p><img src="https://i.loli.net/2017/10/16/59e48a9b738ca.png" alt="控制总线.png"></p>
+<h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><p><img src="https://i.loli.net/2017/10/16/59e4d478d64fd.png" alt="通用寄存器.png"></p>
+<p><img src="https://i.loli.net/2017/10/16/59e4d478f197c.png" alt="TIM截图20171016234646.png"></p>
 
-1. ls-a （--all do not ignore entries starting with . ) 可以列出隐藏文件，以“.&quot;字符开头的文件名是隐藏文件，表示，ls命令不能列出它们。
-2. 文件夹和命令名是大小写敏感的。
-3. Linux没有“文件扩展名”的概念。
-4. Linux支持长文件名，文件名可能包含空格，标点符号，但标点符号仅限使用“.”，“——”，下划线。不要在文件名中使用空格，用下划线来代替。
-</code></pre>
           
         
       
@@ -421,7 +434,7 @@ Linux总是只有一个单一的文件系统树。
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/计算机系统基础 (2)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/02/计算机系统基础 (4)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VoidR">
@@ -440,7 +453,7 @@ Linux总是只有一个单一的文件系统树。
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/25/计算机系统基础 (2)/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/02/02/计算机系统基础 (4)/" itemprop="url">计算机系统基础（四）</a></h1>
         
 
         <div class="post-meta">
@@ -452,8 +465,8 @@ Linux总是只有一个单一的文件系统树。
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T00:16:05+08:00">
-                2018-02-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T10:25:34+08:00">
+                2018-02-02
               </time>
             
 
@@ -462,6 +475,580 @@ Linux总是只有一个单一的文件系统树。
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机系统基础/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机系统基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  290
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="复杂数据类型的机器级表示"><a href="#复杂数据类型的机器级表示" class="headerlink" title="复杂数据类型的机器级表示"></a>复杂数据类型的机器级表示</h3><h4 id="数组的分配与访问"><a href="#数组的分配与访问" class="headerlink" title="数组的分配与访问"></a>数组的分配与访问</h4><ul>
+<li>分配在静态区的数组，在链接后，在可执行目标文件的数据段中分配了空间。</li>
+<li>在函数内部的数组，是auto型数组，数组数据分配在栈中，故数组首址通过EBP来定位。</li>
+</ul>
+<h4 id="结构体数据的分配和访问"><a href="#结构体数据的分配和访问" class="headerlink" title="结构体数据的分配和访问"></a>结构体数据的分配和访问</h4><ul>
+<li>分配在栈中的auto结构型变量的首地址由EBP或ESP来定位</li>
+<li>分配在静态区的结构型变量首地址是一个可以确定的静态区地址</li>
+<li><p>结构型变量x各成员首址可用“基址加偏移量”的寻址方式</p>
+</li>
+<li><p>结构体数据作为入口参数，通常应按地址传递</p>
+</li>
+</ul>
+<h4 id="联合体数据的分配和访问"><a href="#联合体数据的分配和访问" class="headerlink" title="联合体数据的分配和访问"></a>联合体数据的分配和访问</h4><ul>
+<li>联合体各成员共享存储空间，按最大长度成员所需空间大小为准。</li>
+<li>当事先知道某种数据结构中的不同字段的使用时间是互斥的，就可以将这些字段声明为联合，以减少空间</li>
+</ul>
+<h4 id="数据的对齐"><a href="#数据的对齐" class="headerlink" title="数据的对齐"></a>数据的对齐</h4><blockquote>
+<p>减少访存次数</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/11/02/59fb33d2bab33.bmp" alt="对齐方式.bmp"></p>
+<h4 id="越界访问和缓冲区溢出"><a href="#越界访问和缓冲区溢出" class="headerlink" title="越界访问和缓冲区溢出"></a>越界访问和缓冲区溢出</h4><p><img src="https://i.loli.net/2017/11/02/59fb393201655.bmp" alt="TIM截图20171102232546.bmp"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/02/计算机系统基础 (3)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VoidR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VoidR's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/02/计算机系统基础 (3)/" itemprop="url">计算机系统基础（三）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T10:22:44+08:00">
+                2018-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机系统基础/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机系统基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,687
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="IA-32指令类型"><a href="#IA-32指令类型" class="headerlink" title="IA-32指令类型"></a>IA-32指令类型</h2><h4 id="IA-32的标志寄存器"><a href="#IA-32的标志寄存器" class="headerlink" title="IA-32的标志寄存器"></a>IA-32的标志寄存器</h4><ul>
+<li>6个条件标志</li>
+</ul>
+<blockquote>
+<p><strong>OF （Overflow Flag） 溢出标志位</strong><br>溢出标志OF用于反映有符号数加减运算所得结果是否溢出。如果运算结果超过当前运算位数所能表示的范围，则称为溢出，OF的值被置为1，否则，OF的值被清为0。</p>
+<p><strong>SF （Sign Flag） 符号标志</strong><br>符号标志SF用来反映运算结果的符号位，它与运算结果的最高位相同。在微机系统中，有符号数采用补码表示法，所以，SF也就反映运算结果的正负号。运算结果为正数时，SF的值为0，否则其值为1。</p>
+<p><strong>ZF （Zero Flag） 零标志</strong><br>零标志ZF用来反映运算结果是否为0。如果运算结果为0，则其值为1，否则其值为0。在判断运算结果是否为0时，可使用此标志位。</p>
+<p><strong>CF （Carry Flag） 进位标志</strong><br>进位标志CF主要用来反映运算是否产生进位或借位。如果运算结果的最高位产生了一个进位或借位，那么，其值为1，否则其值为0。</p>
+<p>使用该标志位的情况有：多字(字节)数的加减运算，无符号数的大小比较运算，移位操作，字(字节)之间移位，专门改变CF值的指令等。</p>
+<p><strong>AF (Auxiliary Carry Flag) 辅助进位标志</strong><br>在发生下列情况时，辅助进位标志AF的值被置为1，否则其值为0：</p>
+<ol>
+<li>在字操作时，发生低字节向高字节进位或借位时；</li>
+<li>在字节操作时，发生低4位向高4位进位或借位时。</li>
+</ol>
+<p><strong>PF(Parity Flag) 奇偶标志</strong><br>奇偶标志PF用于反映运算结果中“1”的个数的奇偶性。如果“1”的个数为偶数，则PF的值为1，否则其值为0。</p>
+</blockquote>
+<ul>
+<li>3个控制标志</li>
+</ul>
+<blockquote>
+<p><strong>DF （Direction Flag） 方向标志</strong>(自动变址方向是增还是减)<br>方向标志DF用来决定在串操作指令执行时有关指针寄存器发生调整的方向。</p>
+<p><strong>IF (Interruput  Flag) 中断允许标志</strong>(仅对外部可屏蔽中断有用)<br>中断允许标志IF是用来决定CPU是否响应CPU外部的可屏蔽中断发出的中断请求。但不管该标志为何值，CPU都必须响应CPU外部的不可屏蔽中断所发出的中断请求，以及CPU内部产生的中断请求。</p>
+<ol>
+<li>当IF=1时，CPU可以响应CPU外部的可屏蔽中断发出的中断请求；</li>
+<li>当IF=0时，CPU不响应CPU外部的可屏蔽中断发出的中断请求。</li>
+</ol>
+<p><strong>TF (Trap Flag) 陷阱标志</strong>(是否是单步跟踪状态)<br>当追踪标志TF被置为1时，CPU进入单步执行方式，即每执行一条指令，产生一个单步中断请求。这种方式主要用于程序的调试。</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/10/21/59eb51b84b45f.png" alt="IA-32b标志.png"></p>
+<h4 id="IA-32-指令系统概述"><a href="#IA-32-指令系统概述" class="headerlink" title="IA-32 指令系统概述"></a>IA-32 指令系统概述</h4><ul>
+<li>IA-32是典型的CISC（复杂指令集计算机）风格ISA</li>
+</ul>
+<blockquote>
+<p>8个通用寄存器</p>
+<p>2个专用寄存器：</p>
+<ol>
+<li>EIP（PC） EIP寄存器主要用于存放当前代码段即将被执行的下一条指令的偏移，但其本质上并不能直接被指令直接访问。</li>
+<li>标志寄存器EFLAGS</li>
+</ol>
+<p>6个段寄存器（间接给出段基址）</p>
+<p>存储器地址空间为4GB，按字节编址，小端方式</p>
+<p>寻址方式 </p>
+<ol>
+<li>立即</li>
+<li>寄存器</li>
+<li><p>存储器         段基址+有效地址（位移量）</p>
+<p><img src="https://i.loli.net/2017/10/21/59eb591312400.png" alt="寻址方式.png"><br>[B]——基址寄存器编号 [I]——变址寄存器编号 s——比例因子  A——位移量 这些信息可以排列组合</p>
+<ol>
+<li>相对寻址（指令）</li>
+</ol>
+</li>
+</ol>
+<p>变长指令字，变长操作码</p>
+<ul>
+<li>汇编语言格式</li>
+</ul>
+<ol>
+<li>Inter格式汇编</li>
+<li>AT&amp;T格式汇编</li>
+</ol>
+<p><a href="http://www.cnblogs.com/hdk1993/p/4820353.html" target="_blank" rel="noopener">Intel格式和AT&amp;T格式汇编区别</a></p>
+</blockquote>
+<h2 id="IA-32指令类型-1"><a href="#IA-32指令类型-1" class="headerlink" title="IA-32指令类型"></a>IA-32指令类型</h2><h4 id="传送指令"><a href="#传送指令" class="headerlink" title="传送指令"></a>传送指令</h4><ul>
+<li>通用数据传送指令</li>
+</ul>
+<blockquote>
+<p><strong>MOV</strong>：一般传送 </p>
+<p>==注意：  MOV指令不能在两个存储器之间进行数据直接传送。 MOV指令不能在两个段寄存器之间进行数据直接传送。==</p>
+<p><strong>MOVS</strong>：符号扩展传送</p>
+<p><strong>MOVZ</strong>: 零扩展传送</p>
+<p><strong>XCHG</strong>: 数据交换</p>
+<p><strong>PUSH/POP</strong>: 入栈/出栈</p>
+</blockquote>
+<ul>
+<li>地址传送指令</li>
+</ul>
+<blockquote>
+<p><strong>LEA</strong> 加载有效地址</p>
+</blockquote>
+<ul>
+<li>输入输出指令</li>
+</ul>
+<blockquote>
+<p><strong>IN和OUT</strong>: I/O端口与寄存器之间的交换</p>
+</blockquote>
+<ul>
+<li>标志传送指令</li>
+</ul>
+<blockquote>
+<p><strong>PUSHF、POPF</strong>: 将EFLAG压栈，将栈顶内容送入EFLAG</p>
+</blockquote>
+<h4 id="定点算术运算指令"><a href="#定点算术运算指令" class="headerlink" title="定点算术运算指令"></a>定点算术运算指令</h4><ul>
+<li>加减（影响标志，不区分无/带符号）</li>
+</ul>
+<blockquote>
+<p><strong>ADD SUB</strong></p>
+</blockquote>
+<ul>
+<li>增1/减1运算（影响除CF以外的标志，不区分无/带符号）</li>
+</ul>
+<blockquote>
+<p><strong>INC DEC</strong></p>
+</blockquote>
+<ul>
+<li>取负运算（影响标志，若对0取负，则结果为0且CF清0，否则CF置1）</li>
+</ul>
+<blockquote>
+<p><strong>NEG</strong></p>
+</blockquote>
+<ul>
+<li>比较运算（做减法得到标志，不区分无/带符号）</li>
+</ul>
+<blockquote>
+<p><strong>CMP</strong></p>
+</blockquote>
+<ul>
+<li>乘/除运算（不影响标志，区分无/带符号）</li>
+</ul>
+<blockquote>
+<p><strong>MUL/IMUL</strong> 无符号乘/带符号乘</p>
+<p><strong>DIV/IDIV</strong> 无符号除/带符号除</p>
+</blockquote>
+<p><img src="https://i.loli.net/2017/10/22/59eb7f2e9412e.png" alt="定点运算指令汇总.png"></p>
+<h4 id="按位运算"><a href="#按位运算" class="headerlink" title="按位运算"></a>按位运算</h4><ul>
+<li>逻辑运算</li>
+</ul>
+<blockquote>
+<p><strong>NOT 非</strong></p>
+<p><strong>AND 与</strong></p>
+<p><strong>OR 或</strong></p>
+<p><strong>XOR 异或</strong></p>
+<p><strong>TEST 做“与”测试，仅影响标志</strong></p>
+</blockquote>
+<ul>
+<li>移位运算 （左/右移时，最高/最低位送CF）</li>
+</ul>
+<blockquote>
+<p><strong>SHL/SHR：逻辑左/右移</strong></p>
+<p><strong>SAL/SAR: 算术左/右移</strong>          左移判溢出，右移高位补符</p>
+<p><strong>ROL/ROR 循环左/右移</strong></p>
+<p><strong>RCL/RCR 带进位循环左/右移</strong></p>
+</blockquote>
+<p><img src="https://ooo.0o0.ooo/2017/10/22/59ec34006c4bb.png" alt="逆向工程.png"></p>
+<h4 id="控制转移指令"><a href="#控制转移指令" class="headerlink" title="控制转移指令"></a>控制转移指令</h4><ul>
+<li>无条件转移指令</li>
+</ul>
+<blockquote>
+<p><strong>JMP DST</strong>   无条件转移到目标指令DST处执行</p>
+</blockquote>
+<ul>
+<li>条件转移</li>
+</ul>
+<blockquote>
+<p><strong>Jcc DST</strong> cc为条件码，根据标志（条件码）判断是否满足条件，若满足，则转移道目标指DST处执行，否则顺序执行</p>
+</blockquote>
+<ul>
+<li>条件设置</li>
+</ul>
+<blockquote>
+<p><strong>SETcc DST</strong> 按条件码cc判断的结果保存到DST（是一个8为寄存器）</p>
+</blockquote>
+<ul>
+<li>调用和返回指令（用于过程调用）</li>
+</ul>
+<ul>
+<li>中断指令</li>
+</ul>
+<blockquote>
+<p><strong>CALL DST</strong> 返回地址RA入栈，转DST处执行</p>
+<p><strong>RET</strong> 从栈中取出返回地址RA，转到RA处执行</p>
+</blockquote>
+<p><img src="https://ooo.0o0.ooo/2017/10/22/59ec395e65694.png" alt="控制.png"></p>
+<h4 id="x87浮点处理指令"><a href="#x87浮点处理指令" class="headerlink" title="x87浮点处理指令"></a>x87浮点处理指令</h4><p><img src="https://ooo.0o0.ooo/2017/10/22/59ec3d43c4610.png" alt="IA-32 的浮点处理架构.png"></p>
+<h2 id="C语言语句的机器级表示"><a href="#C语言语句的机器级表示" class="headerlink" title="C语言语句的机器级表示"></a>C语言语句的机器级表示</h2><p><img src="https://ooo.0o0.ooo/2017/10/22/59ec43ff52411.png" alt="过程调用的机器级表示.png"></p>
+<h4 id="过程（函数）的结构"><a href="#过程（函数）的结构" class="headerlink" title="过程（函数）的结构"></a>过程（函数）的结构</h4><h6 id="一个C过程的大致结构如下"><a href="#一个C过程的大致结构如下" class="headerlink" title="一个C过程的大致结构如下"></a>一个C过程的大致结构如下</h6><hr>
+<ol>
+<li>准备阶段 </li>
+</ol>
+<ul>
+<li><p>形成帧底：push指令和mov指令</p>
+</li>
+<li><p>生成栈帧（如果需要的话）：sub指令或and指令</p>
+</li>
+<li><p>保存现场（如果有被调用者保存寄存器）： mov指令</p>
+</li>
+</ul>
+<ol>
+<li>过程（函数）体</li>
+</ol>
+<ul>
+<li><p>分配局部变量空间，并赋值</p>
+</li>
+<li><p>具体处理逻辑，如果遇到函数调用时</p>
+<ul>
+<li>准备参数： 将实参送栈帧入口参数处</li>
+<li>CLLL指令： 保存返回地址并转被调用函数</li>
+</ul>
+</li>
+<li><p>在EAX中准备返回参数</p>
+</li>
+</ul>
+<ol>
+<li>结束阶段</li>
+</ol>
+<ul>
+<li>退栈： leave指令或pop指令</li>
+</ul>
+<hr>
+<h4 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h4><p><img src="https://ooo.0o0.ooo/2017/10/22/59ec6985075e3.png" alt="选择结构的机器级表示.png"></p>
+<h4 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h4><p><img src="https://ooo.0o0.ooo/2017/10/22/59ec69b0df63a.png" alt="循环结构的机器级语言表示.png"></p>
+<p>==为提高程序性能，能用非递归方式执行最好用非递归方式。==</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/02/计算机系统基础 (2)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VoidR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VoidR's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/02/计算机系统基础 (2)/" itemprop="url">计算机系统基础（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T10:21:44+08:00">
+                2018-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机系统基础/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机系统基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -622,7 +1209,7 @@ Linux总是只有一个单一的文件系统树。
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/24/计算机系统基础 (4)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/02/计算机系统基础 (1)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VoidR">
@@ -641,7 +1228,7 @@ Linux总是只有一个单一的文件系统树。
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/24/计算机系统基础 (4)/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/02/02/计算机系统基础 (1)/" itemprop="url">计算机系统基础（一）</a></h1>
         
 
         <div class="post-meta">
@@ -653,166 +1240,7 @@ Linux总是只有一个单一的文件系统树。
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-24T20:23:23+08:00">
-                2018-02-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  290
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="复杂数据类型的机器级表示"><a href="#复杂数据类型的机器级表示" class="headerlink" title="复杂数据类型的机器级表示"></a>复杂数据类型的机器级表示</h3><h4 id="数组的分配与访问"><a href="#数组的分配与访问" class="headerlink" title="数组的分配与访问"></a>数组的分配与访问</h4><ul>
-<li>分配在静态区的数组，在链接后，在可执行目标文件的数据段中分配了空间。</li>
-<li>在函数内部的数组，是auto型数组，数组数据分配在栈中，故数组首址通过EBP来定位。</li>
-</ul>
-<h4 id="结构体数据的分配和访问"><a href="#结构体数据的分配和访问" class="headerlink" title="结构体数据的分配和访问"></a>结构体数据的分配和访问</h4><ul>
-<li>分配在栈中的auto结构型变量的首地址由EBP或ESP来定位</li>
-<li>分配在静态区的结构型变量首地址是一个可以确定的静态区地址</li>
-<li><p>结构型变量x各成员首址可用“基址加偏移量”的寻址方式</p>
-</li>
-<li><p>结构体数据作为入口参数，通常应按地址传递</p>
-</li>
-</ul>
-<h4 id="联合体数据的分配和访问"><a href="#联合体数据的分配和访问" class="headerlink" title="联合体数据的分配和访问"></a>联合体数据的分配和访问</h4><ul>
-<li>联合体各成员共享存储空间，按最大长度成员所需空间大小为准。</li>
-<li>当事先知道某种数据结构中的不同字段的使用时间是互斥的，就可以将这些字段声明为联合，以减少空间</li>
-</ul>
-<h4 id="数据的对齐"><a href="#数据的对齐" class="headerlink" title="数据的对齐"></a>数据的对齐</h4><blockquote>
-<p>减少访存次数</p>
-</blockquote>
-<p><img src="https://i.loli.net/2017/11/02/59fb33d2bab33.bmp" alt="对齐方式.bmp"></p>
-<h4 id="越界访问和缓冲区溢出"><a href="#越界访问和缓冲区溢出" class="headerlink" title="越界访问和缓冲区溢出"></a>越界访问和缓冲区溢出</h4><p><img src="https://i.loli.net/2017/11/02/59fb393201655.bmp" alt="TIM截图20171102232546.bmp"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/02/CPU运行原理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="VoidR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="VoidR's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/02/CPU运行原理/" itemprop="url">CPU运行原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T10:34:44+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T10:20:44+08:00">
                 2018-02-02
               </time>
             
@@ -866,7 +1294,7 @@ Linux总是只有一个单一的文件系统树。
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  108
+                  739
                 </span>
               
 
@@ -893,29 +1321,38 @@ Linux总是只有一个单一的文件系统树。
       
         
           
-            <h2 id="CPU运行原理"><a href="#CPU运行原理" class="headerlink" title="CPU运行原理"></a>CPU运行原理</h2><h4 id="计算机组成部分"><a href="#计算机组成部分" class="headerlink" title="计算机组成部分"></a>计算机组成部分</h4><ol>
-<li>控制器 对程序规定的控制信息进行解释</li>
-<li>运算器 对数据进行加工处理</li>
-<li>存储器 存储程序、数据和各种信号、命令等信息，并在需要时提供这些信息。</li>
-<li>输入</li>
-<li>输出</li>
-</ol>
-<h4 id="CPU的内部架构"><a href="#CPU的内部架构" class="headerlink" title="CPU的内部架构"></a>CPU的内部架构</h4><p><img src="https://i.loli.net/2017/10/16/59e48a1a81773.png" alt="TIM截图20171016182916.png"></p>
-<h4 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h4><ol>
-<li>数据总线</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e48a9b59691.png" alt="数据总线.png"></p>
-<ol>
-<li>地址总线</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e48a9b604a2.png" alt="地址总线.png"></p>
-<ol>
-<li>控制总线</li>
-</ol>
-<p><img src="https://i.loli.net/2017/10/16/59e48a9b738ca.png" alt="控制总线.png"></p>
-<h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><p><img src="https://i.loli.net/2017/10/16/59e4d478d64fd.png" alt="通用寄存器.png"></p>
-<p><img src="https://i.loli.net/2017/10/16/59e4d478f197c.png" alt="TIM截图20171016234646.png"></p>
+            <h2 id="计算机系统基础（一）"><a href="#计算机系统基础（一）" class="headerlink" title="计算机系统基础（一）"></a>计算机系统基础（一）</h2><h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><pre><code>图形用户界面 GUI
+命令行界面 CLI
+</code></pre><h3 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h3><h5 id="终端仿真器"><a href="#终端仿真器" class="headerlink" title="终端仿真器"></a>终端仿真器</h5><pre><code>Ctrl-c 和Ctrl-v 不起作用。
+</code></pre><h5 id="一些简单命令"><a href="#一些简单命令" class="headerlink" title="一些简单命令"></a>一些简单命令</h5><pre><code>date 显示当前时间和日期
+cal 显示当前月份的日历
+df 查看磁盘剩余空间的数量
+free 显示空闲内存的数量
+exit 终止终端会话
+</code></pre><p><img src="https://i.loli.net/2017/10/14/59e20ee6a1b88.png" alt="TIM截图20171014211103.png"><br><img src="https://i.loli.net/2017/10/14/59e211ea40138.png" alt="TIM截图20171014213215.png"></p>
+<h5 id="幕后控制台"><a href="#幕后控制台" class="headerlink" title="幕后控制台"></a>幕后控制台</h5><pre><code>即使终端仿真器没有运行，在后台仍然有几个终端会话运行着。他们叫做虚拟终端或者是虚拟控制台。
+可以通过 Ctrl-Alt-F1 到 Ctrl-Alt-F6 访问。回到图形桌面，按下Alt-F7.
+</code></pre><h3 id="文件系统中跳转"><a href="#文件系统中跳转" class="headerlink" title="文件系统中跳转"></a>文件系统中跳转</h3><h5 id="文件系统树"><a href="#文件系统树" class="headerlink" title="文件系统树"></a>文件系统树</h5><pre><code>Linux 以分层目录结构来组织所有文件。这就意味着所有文件组成了一颗树型目录。文件系统中的第一级目录称为根目录。
+根目录包含文件和子目录，子目录包含更多的文件和子目录，以此类推。
+Linux总是只有一个单一的文件系统树。
+</code></pre><h5 id="pwd—打印出当前工作目录名"><a href="#pwd—打印出当前工作目录名" class="headerlink" title="pwd—打印出当前工作目录名"></a>pwd—打印出当前工作目录名</h5><pre><code>当用户以普通用户的身份操控系统时，家目录是唯一允许用户对文件进行写入的地方。每个用户都有他自己的家目录。
+</code></pre><h5 id="ls—列出目录内容"><a href="#ls—列出目录内容" class="headerlink" title="ls—列出目录内容"></a>ls—列出目录内容</h5><pre><code>用ls命令可以列出人一个目录的内容，而不只是当前工作目录的内容。
+</code></pre><h5 id="cd—更改目录"><a href="#cd—更改目录" class="headerlink" title="cd—更改目录"></a>cd—更改目录</h5><pre><code>输入cd，然后输入你想要去的工作目录的路径名。路径名可以通过两种方式来指定，一种是绝对路径，另一种是相对路径。
+1. 绝对路径
+绝对路径开始于根目录，紧跟着目录树的一个个分支，一直到达所期望的目录或文件。
+/usr/bin 它意味着从根目录（开头的“/”表示）开始，有一个叫“usr”的目录包含了目录“bin”。
+2. 相对路径
+相对路径开始于工作目录。我们在文件系统树中用一对特殊符号来表示相对位置。“.”（点）指的是工作目录，“..”（点点）指的是工作目录的父目录。
+（ “./”几乎在所有情况下可以省略，它是隐含的输入）
+</code></pre><h5 id="有用的快捷键"><a href="#有用的快捷键" class="headerlink" title="有用的快捷键"></a>有用的快捷键</h5><pre><code>&gt; cd    更改工作目录到你的家目录
+&gt; cd-   更改工作目录到先前的工作目录
+&gt; cd~user_name 更改工作目录到用户家目录。
 
+1. ls-a （--all do not ignore entries starting with . ) 可以列出隐藏文件，以“.&quot;字符开头的文件名是隐藏文件，表示，ls命令不能列出它们。
+2. 文件夹和命令名是大小写敏感的。
+3. Linux没有“文件扩展名”的概念。
+4. Linux支持长文件名，文件名可能包含空格，标点符号，但标点符号仅限使用“.”，“——”，下划线。不要在文件名中使用空格，用下划线来代替。
+</code></pre>
           
         
       
@@ -1927,7 +2364,7 @@ Linux总是只有一个单一的文件系统树。
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
