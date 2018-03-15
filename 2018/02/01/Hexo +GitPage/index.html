@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180201/7JfK4j6Hia.png?imageslim">
 <meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180201/El3K3CJD3K.png?imageslim">
 <meta property="og:image" content="http://onc55v8te.bkt.clouddn.com/blog/180315/Il4LK9IFKi.png?imageslim">
-<meta property="og:updated_time" content="2018-03-14T17:03:41.635Z">
+<meta property="og:updated_time" content="2018-03-14T17:21:54.816Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo + GitPage 搭建博客">
 <meta name="twitter:description" content="前言使用Hexo + GitPage 搭建个人博客 搭建步骤 系统环境配置 GitHub创建个人仓库 推送网站 绑定域名 更换主题 学习MarkDown 发布文章 etc  系统环境配置要使用Hexo，需要在你的系统中支持Git和Node.js，如果还没有，那就先安装吧。 安装Git下载地址：https://git-scm.com/download/ 安装 Node.jsNode.js下载地址 N">
@@ -270,7 +270,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VoidR">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2018/03/15/5aa9584b1197a.jpg">
+      <meta itemprop="image" content="https://i.loli.net/2018/03/15/5aa9e39d38352.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,495
+                  1,607
                 </span>
               
 
@@ -438,7 +438,8 @@
 <p>在博客文件夹 source\_posts 文件夹下看到我们新建的 markdown 文件。</p>
 <p>我们也可以将写好的Markdow文件放在source\_posts 文件夹下，效果和 hexo n是一样的。</p>
 <p>文章编辑好后，执行以下命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="etc"><a href="#etc" class="headerlink" title="etc"></a>etc</h3><h4 id="设置中文"><a href="#设置中文" class="headerlink" title="设置中文"></a>设置中文</h4><p>默认语言是英文，修改 <strong>站点_config.yml</strong> 的language字段<br><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/El3K3CJD3K.png?imageslim" alt="mark"></p>
+<h3 id="etc"><a href="#etc" class="headerlink" title="etc"></a>etc</h3><h4 id="设置中文"><a href="#设置中文" class="headerlink" title="设置中文"></a>设置中文</h4><p>默认语言是英文，修改 <strong>站点_config.yml</strong> 的language字段 </p>
+<p><img src="http://onc55v8te.bkt.clouddn.com/blog/180201/El3K3CJD3K.png?imageslim" alt="mark"></p>
 <p>NexT 目前支持八种语言版本：</p>
 <table>
 <thead>
@@ -485,7 +486,9 @@
 <h4 id="创建“关于”页面"><a href="#创建“关于”页面" class="headerlink" title="创建“关于”页面"></a>创建“关于”页面</h4><p><strong>新建一个 about 页面：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure></p>
 <p><strong>菜单显示 about 链接</strong></p>
 <p>在<font color="#ffaa00"><strong>主题的 _configy.yml</strong></font> 中将 menu 中 about 前面的注释去掉即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br><span class="line">  about: /about</span><br></pre></td></tr></table></figure></p>
-<h4 id="创建分类页面"><a href="#创建分类页面" class="headerlink" title="创建分类页面"></a>创建分类页面</h4><h5 id="添加-分类-页面，并在菜单中现实页面链接。"><a href="#添加-分类-页面，并在菜单中现实页面链接。" class="headerlink" title="添加 分类 页面，并在菜单中现实页面链接。"></a>添加 分类 页面，并在菜单中现实页面链接。</h5><p><strong>新建一个 “categories” 页面</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure></p>
+<h4 id="创建分类页面"><a href="#创建分类页面" class="headerlink" title="创建分类页面"></a>创建分类页面</h4><p> <strong>添加 分类 页面，并在菜单中现实页面链接。</strong></p>
+<p><strong>新建一个 “categories” 页面</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
 <p><strong>编辑新建的页面，将页面类型设置为 categories</strong></p>
 <blockquote>
 <p>title: 分类</p>
@@ -493,12 +496,37 @@
 <p>type: “categories”</p>
 <p>-–</p>
 </blockquote>
-<p><strong>在菜单中添加链接</strong></p>
-<p>编辑<font color="#ffaa00"><strong>主题的 _configy.yml</strong></font> 中将 menu 中 categories 前面的注释去掉即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br></pre></td></tr></table></figure></p>
-<p><strong>中文乱码问题</strong></p>
+<p>####在菜单中添加链接</p>
+<p>编辑<font color="#ffaa00"><strong>主题的 _configy.yml</strong></font> 中将 menu 中 categories 前面的注释去掉即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br></pre></td></tr></table></figure>
+<p>####中文乱码问题</p>
 <p>在博客搭建过程中，我的博客描述出现了中文乱码的情况</p>
 <p><img src="http://onc55v8te.bkt.clouddn.com/blog/180315/Il4LK9IFKi.png?imageslim" alt="mark"></p>
 <p>因为_config.yml文件我一直用记事本编辑，因为记事本不会自己UTF-8转码，用记事本打开，另存为-&gt;编码选UTF-8，保存即可。使用sublime text编辑就不会出现了。</p>
+<h4 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h4><ol>
+<li>打开主题_config.yml文件(themes/next/_config.yml)</li>
+<li>搜索avatar,去掉注释符号，把后面改成头像的连接地址，可以是两种形式。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>完整的互联网URL</td>
+<td><a href="http://example.com/avtar.png" target="_blank" rel="noopener">http://example.com/avtar.png</a></td>
+</tr>
+<tr>
+<td>站点内的地址</td>
+<td>将头像放置主题目录下的 source/uploads/ （新建uploads目录若不存在） </td>
+</tr>
+</tbody>
+</table>
+<p>配置为：avatar: /uploads/avatar.png </p>
+<p>或者放置在 source/images/ 目录下<br>配置为：avatar: /images/avatar.png|</p>
 
       
     </div>
@@ -602,7 +630,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="https://i.loli.net/2018/03/15/5aa9584b1197a.jpg"
+                src="https://i.loli.net/2018/03/15/5aa9e39d38352.jpg"
                 alt="VoidR" />
             
               <p class="site-author-name" itemprop="name">VoidR</p>
@@ -669,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建步骤"><span class="nav-number">2.</span> <span class="nav-text">搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#系统环境配置"><span class="nav-number">2.0.1.</span> <span class="nav-text">系统环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装Git"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装-Node-js"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">安装 Node.js</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.0.2.</span> <span class="nav-text">安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常用的Hexo-命令"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">常用的Hexo 命令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GitHub创建个人仓库"><span class="nav-number">2.0.3.</span> <span class="nav-text">GitHub创建个人仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置SSH"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">配置SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#设置user-name和user-email"><span class="nav-number">2.0.3.1.1.</span> <span class="nav-text">设置user.name和user.email</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#生成ssh密钥文件"><span class="nav-number">2.0.3.1.2.</span> <span class="nav-text">生成ssh密钥文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送网站"><span class="nav-number">2.0.4.</span> <span class="nav-text">推送网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定域名"><span class="nav-number">2.0.5.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更换主题"><span class="nav-number">2.0.6.</span> <span class="nav-text">更换主题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布文章"><span class="nav-number">2.1.</span> <span class="nav-text">发布文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc"><span class="nav-number">2.2.</span> <span class="nav-text">etc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置中文"><span class="nav-number">2.2.1.</span> <span class="nav-text">设置中文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建“关于”页面"><span class="nav-number">2.2.2.</span> <span class="nav-text">创建“关于”页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建分类页面"><span class="nav-number">2.2.3.</span> <span class="nav-text">创建分类页面</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加-分类-页面，并在菜单中现实页面链接。"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">添加 分类 页面，并在菜单中现实页面链接。</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建步骤"><span class="nav-number">2.</span> <span class="nav-text">搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#系统环境配置"><span class="nav-number">2.0.1.</span> <span class="nav-text">系统环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装Git"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装-Node-js"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">安装 Node.js</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.0.2.</span> <span class="nav-text">安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常用的Hexo-命令"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">常用的Hexo 命令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GitHub创建个人仓库"><span class="nav-number">2.0.3.</span> <span class="nav-text">GitHub创建个人仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置SSH"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">配置SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#设置user-name和user-email"><span class="nav-number">2.0.3.1.1.</span> <span class="nav-text">设置user.name和user.email</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#生成ssh密钥文件"><span class="nav-number">2.0.3.1.2.</span> <span class="nav-text">生成ssh密钥文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送网站"><span class="nav-number">2.0.4.</span> <span class="nav-text">推送网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定域名"><span class="nav-number">2.0.5.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更换主题"><span class="nav-number">2.0.6.</span> <span class="nav-text">更换主题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布文章"><span class="nav-number">2.1.</span> <span class="nav-text">发布文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc"><span class="nav-number">2.2.</span> <span class="nav-text">etc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置中文"><span class="nav-number">2.2.1.</span> <span class="nav-text">设置中文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建“关于”页面"><span class="nav-number">2.2.2.</span> <span class="nav-text">创建“关于”页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建分类页面"><span class="nav-number">2.2.3.</span> <span class="nav-text">创建分类页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#头像设置"><span class="nav-number">2.2.4.</span> <span class="nav-text">头像设置</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
