@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-25T10:42:27.039Z</updated>
+  <updated>2018-08-21T13:48:33.452Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu搭建DokuWiki</title>
+    <link href="http://yoursite.com/2018/08/21/Ubuntu%E6%90%AD%E5%BB%BADokuWiki/"/>
+    <id>http://yoursite.com/2018/08/21/Ubuntu搭建DokuWiki/</id>
+    <published>2018-08-21T13:48:07.000Z</published>
+    <updated>2018-08-21T13:48:33.452Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>DokuWiki是一个强大的wiki系统，简单轻量，插件丰富，很合适中小团队作为团队文档管理的工具。这篇文章将展示如何在Ubuntu 16.04 上安装 DokuWiki。</p><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>DokuWiki不需要太多依赖，因为它不需要数据库。只需要这些：</p><ul><li>PHP 5.3.4或更高版本（建议使用PHP 7+）</li><li>web服务器（Apache）</li></ul><h2 id="0-前期准备"><a href="#0-前期准备" class="headerlink" title="0. 前期准备"></a>0. 前期准备</h2><h4 id="指导"><a href="#指导" class="headerlink" title="指导"></a>指导</h4><p>在你开始之前，你应该升级你的系统。运行下面的命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade</span><br></pre></td></tr></table></figure></p><h4 id="安装-Apache"><a href="#安装-Apache" class="headerlink" title="安装 Apache"></a>安装 Apache</h4><p>一台用于 wiki 的 web服务器。这篇教程中使用的是Apache，但你也可以使用Nginx或任何其他web服务器。用下面的命令安装apache：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install apache2</span><br></pre></td></tr></table></figure></p><h4 id="安装PHP7和模块"><a href="#安装PHP7和模块" class="headerlink" title="安装PHP7和模块"></a>安装PHP7和模块</h4><p>如果你还没有安装 PHP，你应该先安装 PHP。使用下面的命令安装 PHP7 和一些其他 PHP 模块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install php7.0-fpm php7.0-cli php-apcu php7.0-gd php7.0-xml php7.0-curl php7.0-json php7.0-mcrypt php7.0-cgi php7.0 libapache2-mod-php7.0</span><br></pre></td></tr></table></figure></p><h2 id="1-下载安装DokuWiki"><a href="#1-下载安装DokuWiki" class="headerlink" title="1. 下载安装DokuWiki"></a>1. 下载安装DokuWiki</h2><h5 id="官网下载包并且解压到新文件夹dokuwiki"><a href="#官网下载包并且解压到新文件夹dokuwiki" class="headerlink" title="官网下载包并且解压到新文件夹dokuwiki"></a>官网下载包并且解压到新文件夹dokuwiki</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www</span><br><span class="line">sudo wget https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz</span><br><span class="line">sudo tar xvf dokuwiki-stable.tgz</span><br><span class="line">sudo mv dokuwiki-*/ dokuwiki</span><br></pre></td></tr></table></figure><h5 id="修改dokuwiki的权限"><a href="#修改dokuwiki的权限" class="headerlink" title="修改dokuwiki的权限"></a>修改dokuwiki的权限</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R  www-data:root /var/www/dokuwiki</span><br></pre></td></tr></table></figure><h5 id="修改Apache中文件根目录的指向路径"><a href="#修改Apache中文件根目录的指向路径" class="headerlink" title="修改Apache中文件根目录的指向路径"></a>修改Apache中文件根目录的指向路径</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apache2/sites-enabled/000*.conf</span><br></pre></td></tr></table></figure><p>将<code>DocumentRoot /var/www/html</code> 修改为 <code>DocumentRoot /var/www/dokuwiki</code></p><h5 id="修改AllowOverrides的配置"><a href="#修改AllowOverrides的配置" class="headerlink" title="修改AllowOverrides的配置"></a>修改AllowOverrides的配置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apache2/apache2.conf</span><br></pre></td></tr></table></figure><p>将<code>AllowOverride None</code> 修改为 <code>AllowOverride All</code></p><h5 id="重启Apache2"><a href="#重启Apache2" class="headerlink" title="重启Apache2"></a>重启Apache2</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure><h2 id="2-安装配置DokuWiki"><a href="#2-安装配置DokuWiki" class="headerlink" title="2. 安装配置DokuWiki"></a>2. 安装配置DokuWiki</h2><p>进入http:IP/install.php安装配置<br><img src="https://i.loli.net/2018/08/21/5b7c158dde118.jpg" alt="install.jpg"></p><p>配置完成后，为了安全，删除/var/www/html/dokuwiki/目录下的install.php页面。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /var/www/dokuwiki/install.php</span><br></pre></td></tr></table></figure></p><h2 id="3-开始使用"><a href="#3-开始使用" class="headerlink" title="3. 开始使用"></a>3. 开始使用</h2><p><img src="https://i.loli.net/2018/08/21/5b7c168492035.jpg" alt="welcome.jpg"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;说明&quot;&gt;&lt;a href=&quot;#说明&quot; class=&quot;headerlink&quot; title=&quot;说明&quot;&gt;&lt;/a&gt;说明&lt;/h2&gt;&lt;p&gt;DokuWiki是一个强大的wiki系统，简单轻量，插件丰富，很合适中小团队作为团队文档管理的工具。这篇文章将展示如何在Ubuntu 16.
+      
+    
+    </summary>
+    
+    
+      <category term="Wiki" scheme="http://yoursite.com/tags/Wiki/"/>
+    
+  </entry>
   
   <entry>
     <title>实验吧CTF bin100(ebCTF 2013)</title>
